@@ -1,0 +1,23 @@
+/**
+ * Copyright © 2019 O2TI. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+
+.opc-wrapper .form-login,
+.opc-wrapper .form-shipping-address,
+.opc-wrapper .methods-shipping {
+    background-color: #fff;
+}
+.opc-wrapper .methods-shipping {
+    padding-top: 10px;
+    margin-top: 0px;
+}
+.columns .column.main {
+    padding-bottom: 0px;
+}
+.action-edit-address {
+    margin-top: 15px;
+}
+.checkout-payment-method .payment-methods {
+    margin: 0px;
+}

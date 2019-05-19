@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+    Copyright © 2019 O2TI. All rights reserved.
+    See LICENSE.txt for license details.
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <full_checkout>
+            <general>
+                <disable_discount>1</disable_discount>
+            </general>
+            <field_order>
+                <firstname>20</firstname>
+                <lastname>30</lastname>
+                <vat_id>40</vat_id>
+                <company>50</company>
+                <telephone>60</telephone>
+                <postcode>70</postcode>
+                <street>80</street>
+                <city>90</city>
+                <region_id>100</region_id>
+                <country_id>110</country_id>                
+            </field_order>
+            <field_mask>
+                <telephone>(99)99999-9999</telephone>
+                <vat_id>this.CpfCnpjMaskBehavior()</vat_id>
+                <postcode>99999-999</postcode>
+            </field_mask>
+        </full_checkout>
+    </default>
+</config>

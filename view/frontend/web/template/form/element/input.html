@@ -1,0 +1,22 @@
+<!--
+/**
+ * Copyright © 2019 O2TI. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<!-- input field element and corresponding bindings -->
+<input class="input-text" type="text" data-bind="
+    value: value,
+    valueUpdate: 'keyup',
+    hasFocus: focused,
+    attr: {
+        name: inputName,
+        placeholder: placeholder,
+        'aria-describedby': getDescriptionId(),
+        'aria-required': required,
+        'aria-invalid': error() ? true : 'false',
+        id: uid,
+        disabled: disabled,
+        'data-mask': mask
+    }"/>
+<!-- additional content -->

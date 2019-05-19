@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!--
+    Copyright © 2019 O2TI. All rights reserved.
+    See LICENSE.txt for license details.
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="full_checkout" translate="label" type="text" sortOrder="1500" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Full Checkout</label>
+            <tab>sales</tab>
+            <resource>O2TI_FullCheckout::full_checkout</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="disable_discount" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Disable Discount</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Disables the discount code option in the final step of the checkout.</comment>
+                </field>
+                <field id="footer_content" translate="label comment" sortOrder="20" type="editor" showInStore="1" showInDefault="1" >
+                    <label>Footer Content</label>
+                    <frontend_model>O2TI\FullCheckout\Block\Adminhtml\Editor</frontend_model>
+                </field>
+            </group>
+            <group id="field_order" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Field Order</label>
+                <field id="firstname" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>First Name</label>
+                </field>
+                <field id="lastname" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Last Name</label>
+                </field>
+                <field id="vat_id" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>VAT ID</label>
+                </field>
+                <field id="company" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Company</label>
+                </field>
+                 <field id="postcode" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Postal Code</label>
+                </field>
+                <field id="telephone" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Telephone</label>
+                </field>
+                <field id="street" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Street</label>
+                </field>
+                <field id="city" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>City</label>
+                </field>
+                <field id="region_id" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Region</label>
+                </field>
+                <field id="country_id" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Country</label>
+                </field>
+            </group>
+            <group id="field_mask" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Field Mask</label>
+                <field id="telephone" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Telephone</label>
+                </field>
+                <field id="vat_id" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>VAT ID</label>
+                </field>
+                <field id="postcode" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Postal Code</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
