@@ -20,8 +20,6 @@
        
         <referenceContainer name="content">
             <container name="cleancheckout_footer_wrapper" after="checkout.root" htmlTag="div" htmlClass="checkout-footer-wrapper">
-                <block class="O2TI\FullCheckout\Block\Footer" name="full_checkout_footer" after="full_checkout_back_to_store" template="footer.phtml">
-                </block>
             </container>
         </referenceContainer>
 
@@ -31,7 +29,7 @@
                     <item name="components" xsi:type="array">
                         <item name="checkout" xsi:type="array">
                             <item name="children" xsi:type="array">
-                                <item name="progressBar" xsi:type="array" after="checkout.root" htmlTag="div" >
+                                 <item name="progressBar" xsi:type="array">
                                     <item name="sortOrder" xsi:type="string">0</item>
                                     <item name="component" xsi:type="string">Magento_Checkout/js/view/progress-bar</item>
                                     <item name="displayArea" xsi:type="string">progressBar</item>
