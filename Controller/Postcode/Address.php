@@ -30,7 +30,11 @@ class Address extends \Magento\Framework\App\Action\Action
                 $url = "http://endereco.ecorreios.com.br/app/enderecoCep.php?cep=".$zipcode;                    
                 $this->_curl->get($url);
                 $response = $this->_curl->getBody();
+                if(!$response){
+                   return $return->setData($data);
+                }
                 $response  = json_decode($response);
+
                 if($response->uf){
                     $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
                     $region = $objectManager->create('Magento\Directory\Model\Region')
@@ -45,10 +49,8 @@ class Address extends \Magento\Framework\App\Action\Action
                     'uf' =>  $region_id ? $region_id : "",
                 );
             } catch (\SoapFault $e) {
+
             }
-
-
-			
         }
         return $return->setData($data);
     }

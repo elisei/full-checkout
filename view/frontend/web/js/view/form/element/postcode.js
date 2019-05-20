@@ -94,33 +94,36 @@
                             }
                             var number = registry.get(element.parentName + '.' + 'street.1').uid;
                             jQuery('#'+number).focus();
-                            var address = quote.shippingAddress(); 
-                            var serviceUrl, payload;
                            
-                            serviceUrl = resourceUrlManager.getUrlForEstimationShippingMethodsForNewAddress(quote);
-                            payload = JSON.stringify({
-                                    address: {
-                                        'country_id': registry.get(element.parentName + '.' + 'country_id').value(),
-                                        'region_id': registry.get(element.parentName + '.' + 'region_id').value(),
-                                        'postcode': cep
-                                    }
-                                }
-                            );
-                            shippingService.isLoading(true);
-                            storage.post(
-                                serviceUrl, payload, false
-                            ).done(function (result) {
-                                rateRegistry.set(address.getCacheKey(), result);
-                                shippingService.setShippingRates(result);
-                                shippingService.isLoading(false);
-                            }).fail(function (response) {
-                                shippingService.setShippingRates([]);
-                                errorProcessor.process(response);
-                            }).always(function () {
-                                shippingService.isLoading(false);
-                            });
 
                         }
+                    }).always(function () {
+                       
+                        var address = quote.shippingAddress(); 
+                        var serviceUrl, payload;
+                       
+                        serviceUrl = resourceUrlManager.getUrlForEstimationShippingMethodsForNewAddress(quote);
+                        payload = JSON.stringify({
+                                address: {
+                                    'country_id': registry.get(element.parentName + '.' + 'country_id').value(),
+                                    'region_id': registry.get(element.parentName + '.' + 'region_id').value(),
+                                    'city': registry.get(element.parentName + '.' + 'city').value(),
+                                    'postcode': cep,
+                                }
+                            }
+                        );
+                        shippingService.isLoading(true);
+                        storage.post(
+                            serviceUrl, payload, false
+                        ).done(function (result) {
+                            shippingService.setShippingRates(result);
+                            shippingService.isLoading(false);
+                        }).fail(function (response) {
+                            shippingService.setShippingRates([]);
+                            errorProcessor.process(response);
+                        }).always(function () {
+                            shippingService.isLoading(false);
+                        });
                     });
                 }
             }

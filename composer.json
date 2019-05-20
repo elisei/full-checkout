@@ -2,7 +2,7 @@
     "name": "o2ti/full-checkout",
     "description": "Full Checkout by O2TI",
     "type": "magento2-module",
-    "version": "100.0.2",
+    "version": "100.0.3",
     "license": [
         "proprietary"
     ],
