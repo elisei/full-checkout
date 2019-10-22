@@ -8,7 +8,7 @@
     ],
     "require": {
         "php": ">=7.0",
-        "moip/magento2": "1.0.21"
+        "moip/magento2": ">=1.0.21"
     },
     "autoload": {
         "files": [
