@@ -2,13 +2,13 @@
     "name": "o2ti/full-checkout",
     "description": "Full Checkout by O2TI",
     "type": "magento2-module",
-    "version": "100.0.3",
+    "version": "100.0.7",
     "license": [
         "proprietary"
     ],
     "require": {
         "php": ">=7.0",
-        "moip/magento2": "1.0.21"
+        "moip/magento2": ">=1.0.21"
     },
     "autoload": {
         "files": [
