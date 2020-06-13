@@ -3,32 +3,31 @@
     Copyright © 2019 O2TI. All rights reserved.
     See LICENSE.txt for license details.
 -->
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <head>
-        <css src="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" src_type="url" />
-    </head>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="checkout" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-
-        <referenceBlock name="minicart" remove="true" />
-        <referenceContainer name="header.panel" remove="true" />
-        <referenceBlock name="top.search" remove="true" />
-        <referenceBlock name="catalog.compare.link" remove="true" />
-        <referenceBlock name="catalog.topnav" remove="true"/>
-        <referenceContainer name="footer-container"  remove="true"/>
-       
-        <referenceContainer name="content">
-            <container name="cleancheckout_footer_wrapper" after="checkout.root" htmlTag="div" htmlClass="checkout-footer-wrapper">
+         <referenceContainer name="page.wrapper">
+            <container name="checkout.header.container" as="checkout_header_container" label="Checkout Page Header Container" htmlTag="header" htmlClass="page-checkout-store-header" before="main.content">
+                <container name="checkout.header.wrapper" label="Checkout Page Header" as="checkout_header_wrapper" htmlTag="div" htmlClass="checkout-store-header content"/>
             </container>
         </referenceContainer>
-
+        <referenceBlock name="header.container" remove="true" />
+        <referenceContainer name="footer-container"  remove="true"/>
+        <move element="logo" destination="checkout.header.wrapper"/>
         <referenceBlock name="checkout.root">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">O2TI_FullCheckout::onepage.phtml</argument>
+            </action>
             <arguments>
                 <argument name="jsLayout" xsi:type="array">
                     <item name="components" xsi:type="array">
                         <item name="checkout" xsi:type="array">
+                            <item name="component" xsi:type="string">uiComponent</item>
+                            <item name="config" xsi:type="array">
+                                <item name="template" xsi:type="string">O2TI_FullCheckout/onepage</item>
+                            </item>
                             <item name="children" xsi:type="array">
-                                 <item name="progressBar" xsi:type="array">
-                                    <item name="sortOrder" xsi:type="string">0</item>
+                                <item name="progressBar" xsi:type="array" >
+                                    <item name="sortOrder" xsi:type="string">10</item>
                                     <item name="component" xsi:type="string">Magento_Checkout/js/view/progress-bar</item>
                                     <item name="displayArea" xsi:type="string">progressBar</item>
                                     <item name="config" xsi:type="array">
@@ -38,16 +37,26 @@
                                         </item>
                                     </item>
                                 </item>
+                               <!--  <item name="safe" xsi:type="array" >
+                                    <item name="sortOrder" xsi:type="string">100</item>
+                                    <item name="component" xsi:type="string">uiComponent</item>
+                                    <item name="displayArea" xsi:type="string">safe</item>
+                                    <item name="config" xsi:type="array">
+                                        <item name="template" xsi:type="string">O2TI_FullCheckout/safe</item>
+                                    </item>
+                                </item> -->
                                 <item name="steps" xsi:type="array">
+                                    <item name="component" xsi:type="string">uiComponent</item>
+                                    <item name="displayArea" xsi:type="string">steps</item>
                                     <item name="children" xsi:type="array">
-                                         <item name="email-step" xsi:type="array">
-                                            <item name="component" xsi:type="string">O2TI_FullCheckout/js/view/form/element/email</item>
-                                            <item name="sortOrder" xsi:type="string">0</item>
+                                         <item name="identify-step" xsi:type="array">
+                                            <item name="component" xsi:type="string">O2TI_FullCheckout/js/view/identify</item>
+                                            <item name="sortOrder" xsi:type="string">1</item>
                                             <item name="children" xsi:type="array">
-                                                <item name="customer-email" xsi:type="array">
+                                                <item name="identify-by-email" xsi:type="array">
                                                     <item name="sortOrder" xsi:type="string">50</item>
-                                                    <item name="component" xsi:type="string">Magento_Checkout/js/view/form/element/email</item>
-                                                    <item name="template" xsi:type="string">Magento_Checkout/form/element/email</item>
+                                                    <item name="component" xsi:type="string">O2TI_FullCheckout/js/view/form/element/IdentifyByEmail</item>
+                                                    <item name="template" xsi:type="string">O2TI_FullCheckout/form/element/identify-by-email</item>
                                                     <item name="displayArea" xsi:type="string">login-methods</item>
                                                     <item name="tooltip" xsi:type="array">
                                                         <item name="description" xsi:type="string" translate="true">We'll send your order confirmation here.</item>
@@ -72,6 +81,8 @@
                                             </item>
                                         </item>
                                         <item name="shipping-step" xsi:type="array">
+                                            <item name="component" xsi:type="string">uiComponent</item>
+                                            <item name="sortOrder" xsi:type="string">2</item>
                                             <item name="children" xsi:type="array">
                                                 <item name="shippingAddress" xsi:type="array">
                                                     <item name="children" xsi:type="array">
@@ -85,33 +96,34 @@
                                             </item>
                                         </item>
                                         <item name="billing-step" xsi:type="array">
-                                                <item name="children" xsi:type="array">
-                                                    <item name="payment" xsi:type="array">
-                                                        <item name="children" xsi:type="array">
-                                                            <item name="customer-email" xsi:type="array">
-                                                                 <item name="config" xsi:type="array">
-                                                                    <item name="componentDisabled" xsi:type="boolean">true</item>
-                                                                </item>
+                                            <item name="component" xsi:type="string">uiComponent</item>
+                                            <item name="sortOrder" xsi:type="string">3</item>
+                                            <item name="children" xsi:type="array">
+                                                <item name="payment" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="customer-email" xsi:type="array">
+                                                             <item name="config" xsi:type="array">
+                                                                <item name="componentDisabled" xsi:type="boolean">true</item>
                                                             </item>
-                                                            <item name="afterMethods" xsi:type="array">
-                                                                <item name="children" xsi:type="array">
-                                                                    <item name="discount" xsi:type="array">
-                                                                        <item name="config" xsi:type="array">
-                                                                            <item name="componentDisabled" xsi:type="boolean">true</item>
-                                                                        </item>
+                                                        </item>
+                                                        <item name="afterMethods" xsi:type="array">
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="discount" xsi:type="array">
+                                                                    <item name="config" xsi:type="array">
+                                                                        <item name="componentDisabled" xsi:type="boolean">true</item>
                                                                     </item>
                                                                 </item>
                                                             </item>
-                                                            <item name="beforeMethods" xsi:type="array">
-                                                                <item name="children" xsi:type="array">
-                                                                    <item name="discount" xsi:type="array">
-                                                                        <item name="component" xsi:type="string">Magento_SalesRule/js/view/payment/discount</item>
-                                                                        <item name="children" xsi:type="array">
-                                                                            <item name="errors" xsi:type="array">
-                                                                                <item name="sortOrder" xsi:type="string">0</item>
-                                                                                <item name="component" xsi:type="string">Magento_SalesRule/js/view/payment/discount-messages</item>
-                                                                                <item name="displayArea" xsi:type="string">messages</item>
-                                                                            </item>
+                                                        </item>
+                                                        <item name="beforeMethods" xsi:type="array">
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="discount" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Magento_SalesRule/js/view/payment/discount</item>
+                                                                    <item name="children" xsi:type="array">
+                                                                        <item name="errors" xsi:type="array">
+                                                                            <item name="sortOrder" xsi:type="string">0</item>
+                                                                            <item name="component" xsi:type="string">Magento_SalesRule/js/view/payment/discount-messages</item>
+                                                                            <item name="displayArea" xsi:type="string">messages</item>
                                                                         </item>
                                                                     </item>
                                                                 </item>
@@ -119,6 +131,7 @@
                                                         </item>
                                                     </item>
                                                 </item>
+                                            </item>
                                         </item>
                                     </item>
                                 </item>

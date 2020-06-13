@@ -9,8 +9,10 @@ define([
     return function (targetModule) {
         return targetModule.extend({
             isFullMode: function () {
-                if (!this.getTotals()) {
-                    return false;
+                if(stepNavigator.isProcessed('shipping')){
+                    if (!this.getTotals()) {
+                        return false;
+                    }
                 }
                 return true; 
             }

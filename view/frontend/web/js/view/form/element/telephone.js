@@ -10,6 +10,9 @@
 ], function (registry, abstract, jQuery, mask) {
     'use strict';
     return abstract.extend({
+        defaults: {
+            elementTmpl: 'O2TI_FullCheckout/form/element/number'
+        },
         initialize: function () {
             this._super();
             jQuery('#'+this.uid).mask(this.mask);

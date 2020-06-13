@@ -1,0 +1,13 @@
+<!--
+/**
+ * Copyright © 2019 O2TI. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<li id="identify" data-bind="fadeVisible: isVisible">
+    <div class="step-title" data-bind="i18n: 'Identify'" data-role="title"></div>
+    <div id="checkout-step-title" class="step-content" data-role="content">
+        <each args="getRegion('login-methods')" render="" />
+    </div>
+</li>
+

@@ -9,7 +9,7 @@ define([
     'Magento_Checkout/js/model/quote',
     'Magento_Checkout/js/model/resource-url-manager',
     'mage/storage'
-], function (_, jQuery, registry, quote, resourceUrlManager, storage) {
+], function (_, $, registry, quote, resourceUrlManager, storage) {
     'use strict';
     return function (targetModule) {
         return function (selectShippingMethod) {
@@ -21,7 +21,7 @@ define([
             if(selectShippingMethod === null){
                 return;
             }
-            var setClassselectShippingMethod = jQuery('.label_carrier_' + selectShippingMethod['method_code'] + '_' + selectShippingMethod['carrier_code']).addClass('selected-shipping');
+            var setClassselectShippingMethod = $('.label_carrier_' + selectShippingMethod['method_code'] + '_' + selectShippingMethod['carrier_code']).addClass('selected-shipping');
             var payload = {
                 addressInformation: {
                     'shipping_address': quote.shippingAddress(),

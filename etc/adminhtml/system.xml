@@ -1,13 +1,12 @@
 <?xml version="1.0"?>
-<!--
-    Copyright © 2019 O2TI. All rights reserved.
-    See LICENSE.txt for license details.
--->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/system_file.xsd">
     <system>
+        <tab id="o2ti" translate="label" sortOrder="100">
+            <label><![CDATA[<span class='o2ti-logo'>O2TI</span>]]></label>
+        </tab>
         <section id="full_checkout" translate="label" type="text" sortOrder="1500" showInDefault="1" showInWebsite="1" showInStore="1">
             <label>Full Checkout</label>
-            <tab>sales</tab>
+            <tab>o2ti</tab>
             <resource>O2TI_FullCheckout::full_checkout</resource>
             <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>General</label>
@@ -15,10 +14,6 @@
                     <label>Disable Discount</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                     <comment>Disables the discount code option in the final step of the checkout.</comment>
-                </field>
-                <field id="footer_content" translate="label comment" sortOrder="20" type="editor" showInStore="1" showInDefault="1" >
-                    <label>Footer Content</label>
-                    <frontend_model>O2TI\FullCheckout\Block\Adminhtml\Editor</frontend_model>
                 </field>
             </group>
             <group id="field_order" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
