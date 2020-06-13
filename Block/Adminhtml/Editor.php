@@ -3,12 +3,11 @@
  * Copyright © 2019 O2TI. All rights reserved.
  * See LICENSE.txt for license details.
  */
+
 namespace O2TI\FullCheckout\Block\Adminhtml;
 
-use Magento\Framework\Registry;
 use Magento\Backend\Block\Template\Context;
 use Magento\Cms\Model\Wysiwyg\Config as WysiwygConfig;
-use Magento\Framework\Data\Form\Element\AbstractElement;
 
 class Editor extends \Magento\Config\Block\System\Config\Form\Field
 {
@@ -27,6 +26,7 @@ class Editor extends \Magento\Config\Block\System\Config\Form\Field
     {
         $element->setWysiwyg(true);
         $element->setConfig($this->_wysiwygConfig->getConfig($element));
+
         return parent::_getElementHtml($element);
     }
 }
