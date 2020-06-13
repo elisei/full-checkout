@@ -3,11 +3,11 @@
  * Copyright © 2019 O2TI. All rights reserved.
  * See LICENSE.txt for license details.
  */
+
 namespace O2TI\FullCheckout\Plugin;
 
 /**
- * Class Success
- * @package Tigren\CustomTheme\Plugin\Controller\Onepage
+ * Class Success.
  */
 class Success
 {
@@ -22,15 +22,16 @@ class Success
 
     /**
      * Success constructor.
-     * @param \Magento\Framework\Registry $coreRegistry
+     *
+     * @param \Magento\Framework\Registry     $coreRegistry
      * @param \Magento\Checkout\Model\Session $checkoutSession
      */
     public function __construct(
-		\Magento\Framework\Registry $coreRegistry,
-		\Magento\Checkout\Model\Session $checkoutSession
+        \Magento\Framework\Registry $coreRegistry,
+        \Magento\Checkout\Model\Session $checkoutSession
     ) {
-		$this->_coreRegistry = $coreRegistry;
-		$this->_checkoutSession = $checkoutSession;
+        $this->_coreRegistry = $coreRegistry;
+        $this->_checkoutSession = $checkoutSession;
     }
 
     /**
@@ -38,7 +39,7 @@ class Success
      */
     public function beforeExecute(\Magento\Checkout\Controller\Onepage\Success $subject)
     {
-		$currentOrder = $this->_checkoutSession->getLastRealOrder();
-		$this->_coreRegistry->register('current_order', $currentOrder);
+        $currentOrder = $this->_checkoutSession->getLastRealOrder();
+        $this->_coreRegistry->register('current_order', $currentOrder);
     }
 }
