@@ -63,11 +63,8 @@ define([
          */
         initConfig() {
             this._super();
-
-            
             this.enableNext = this.resolveInitialEnableNextVisibility();
             this.isPasswordVisible = this.resolveInitialPasswordVisibility();
-
             return this;
         },
 

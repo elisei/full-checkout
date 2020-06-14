@@ -12,10 +12,10 @@
     return abstract.extend({
         initialize() {
             this._super();          
-            $("#"+this.uid).mask(this.CpfCnpjMaskBehavior());
+            $("#"+this.uid).mask(this.maskToCpfCnpjMaskBehavior());
             return this;
         },
-        CpfCnpjMaskBehavior: function(){
+        maskToCpfCnpjMaskBehavior() {
             var  lengthDocument = this.value().replace(/\D/g, "").length;
             if(registry.get(this.parentName + "." + "company")){
                  if(lengthDocument <= 11){
