@@ -45,7 +45,7 @@ define([
         }),
 
         /** @inheritdoc */
-        initialize: function () {
+        initialize() {
             this._super();
             checkoutDataResolver.resolvePaymentMethod();
             stepNavigator.registerStep(
@@ -63,7 +63,7 @@ define([
         /**
          * Navigate method.
          */
-        navigate: function () {
+        navigate() {
             var self = this;
 
             if (!self.hasShippingMethod()) {
@@ -79,14 +79,14 @@ define([
         /**
          * @return {Boolean}
          */
-        hasShippingMethod: function () {
+        hasShippingMethod() {
             return window.checkoutConfig.selectedShippingMethod !== null;
         },
 
         /**
          * @return {*}
          */
-        getFormKey: function () {
+        getFormKey() {
             return window.checkoutConfig.formKey;
         }
     });

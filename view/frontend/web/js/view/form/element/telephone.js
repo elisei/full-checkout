@@ -13,12 +13,12 @@
         defaults: {
             elementTmpl: "O2TI_FullCheckout/form/element/number"
         },
-        initialize: function () {
+        initialize() {
             this._super();
             $("#"+this.uid).mask(this.mask);
             return this;
         },
-        onUpdate: function () {
+        onUpdate() {
             var validate = this.validate();
             this.bubble("update", this.hasChanged());
             $("#"+this.uid).mask(this.mask);

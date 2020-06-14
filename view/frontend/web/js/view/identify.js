@@ -22,13 +22,11 @@ define([
 
         isVisible: ko.observable(!customer.isLoggedIn()),
 
-        initialize: function () {
+        initialize() {
             this._super();
             if(!customer.isLoggedIn()) {
                 stepNavigator.registerStep("identify", null, $t("Identify"), this.isVisible, _.bind(this.navigate, this), this.sortOrder);
             }
-            
-
             return this;
         },
 
@@ -37,7 +35,7 @@ define([
          *
          * @param {Object} step - navigation step
          */
-        navigate: function (step) {
+        navigate(step) {
             if (customer.isLoggedIn()) {
                 this.navigateToNextStep();
             } else {
@@ -46,9 +44,8 @@ define([
         },
 
 
-        validateEmail: function () {
+        validateEmail() {
             var emailValidationResult = customer.isLoggedIn();
-
             if (!customer.isLoggedIn()) {
                 $(this.identifierSelector).validation();
                 emailValidationResult = Boolean($(this.identifierSelector + " input[name=username]").valid());
@@ -56,7 +53,7 @@ define([
             return emailValidationResult;
         },
 
-        navigateToNextStep: function () {
+        navigateToNextStep() {
             if (this.validateEmail()) {
                 stepNavigator.next();
             } else {

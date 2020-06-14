@@ -19,7 +19,7 @@
     "use strict";
     return abstract.extend({
 
-        initialize: function () {
+        initialize() {
             this._super();
             var element = this;
             this.toggleFields(element);
@@ -60,7 +60,7 @@
             }
             return this;
         },
-        onUpdate: function () {
+        onUpdate() {
          
             var element = this;
             this.toggleFields(element);

@@ -8,10 +8,10 @@ define([
     "use strict";
     return function (targetModule) {
         return targetModule.extend({
-            getShippingMethodTitle: function () {
+            getShippingMethodTitle() {
                 return "";
             },
-            getValue: function(){
+            getValue(){
                var price;
                 if (!this.isCalculated()) {
                     return this.notCalculatedMessage;

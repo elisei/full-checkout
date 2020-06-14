@@ -10,7 +10,7 @@
 ], function (registry, abstract, $, mask) {
     "use strict";
     return abstract.extend({
-        initialize: function () {
+        initialize() {
             this._super();          
             $("#"+this.uid).mask(this.CpfCnpjMaskBehavior());
             return this;
@@ -26,7 +26,7 @@
             }
             return lengthDocument  <= 11 ? "000.000.000-009" : "00.000.000/0000-00";
         },
-        onUpdate: function () {
+        onUpdate() {
             var validate = this.validate();
             this.bubble("update", this.hasChanged());
             $("#"+this.uid).mask(this.CpfCnpjMaskBehavior());

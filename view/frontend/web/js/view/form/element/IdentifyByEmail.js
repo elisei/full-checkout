@@ -61,7 +61,7 @@ define([
          *
          * @returns {Object} Chainable.
          */
-        initConfig: function () {
+        initConfig() {
             this._super();
 
             
@@ -71,7 +71,7 @@ define([
             return this;
         },
 
-        initialize: function() {
+        initialize() {
             this._super();
             this.checkEmailAvailability();
             this.resolveInitialEnableNextVisibility();
@@ -83,7 +83,7 @@ define([
          *
          * @returns {Object} Chainable.
          */
-        initObservable: function () {
+        initObservable() {
             this._super()
                 .observe(["email", "emailFocused", "isLoading", "isPasswordVisible", "enableNext"]);
 
@@ -93,7 +93,7 @@ define([
         /**
          * Callback on changing email property
          */
-        emailHasChanged: function () {
+        emailHasChanged() {
             var self = this;
 
             clearTimeout(this.emailCheckTimeout);
@@ -117,7 +117,7 @@ define([
         /**
          * Check email existing.
          */
-        checkEmailAvailability: function () {
+        checkEmailAvailability() {
             this.validateRequest();
             this.isEmailCheckComplete = $.Deferred();
             this.isLoading(true);
@@ -142,7 +142,7 @@ define([
          * 2 - The request has been sent
          * 3 - The request is in process
          */
-        validateRequest: function () {
+        validateRequest() {
             if (this.checkRequest != null && $.inArray(this.checkRequest.readyState, [1, 2, 3])) {
                 this.checkRequest.abort();
                 this.checkRequest = null;
@@ -155,7 +155,7 @@ define([
          * @param {Boolean} focused - input focus.
          * @returns {Boolean} - validation result.
          */
-        validateEmail: function (focused) {
+        validateEmail(focused) {
             var loginFormSelector = "form[data-role=email-with-possible-login]",
                 usernameSelector = loginFormSelector + " input[name=username]",
                 loginForm = $(loginFormSelector),
@@ -179,7 +179,7 @@ define([
             return validator.check(usernameSelector);
         },
 
-        continueOSC: function() {
+        continueOSC() {
             var loginFormSelector = "form[data-role=email-with-possible-login]";
             if (this.validateEmail()) {
                 stepNavigator.next();
@@ -194,7 +194,7 @@ define([
          *
          * @param {HTMLElement} loginForm - form element.
          */
-        login: function (loginForm) {
+        login(loginForm) {
             var loginData = {},
                 formDataArray = $(loginForm).serializeArray();
 
@@ -210,7 +210,7 @@ define([
             }
         },
 
-        resolveInitialEnableNextVisibility: function() {
+        resolveInitialEnableNextVisibility() {
            
             if (checkoutData.getInputFieldEmailValue() !== "" && checkoutData.getCheckedEmailValue() === "") {
                 return true;
@@ -227,7 +227,7 @@ define([
          *
          * @returns {Boolean} - initial visibility state.
          */
-        resolveInitialPasswordVisibility: function () {
+        resolveInitialPasswordVisibility() {
             
             if (checkoutData.getInputFieldEmailValue() !== "" && checkoutData.getCheckedEmailValue() === "") {
                 return true;

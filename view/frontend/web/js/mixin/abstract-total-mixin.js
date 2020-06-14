@@ -8,7 +8,7 @@ define([
     "use strict";
     return function (targetModule) {
         return targetModule.extend({
-            isFullMode: function () {
+            isFullMode() {
                 if(stepNavigator.isProcessed("shipping")){
                     if (!this.getTotals()) {
                         return false;
