@@ -4,19 +4,19 @@
  */
 
 define([
-    'jquery',
-    'uiComponent',
-    'ko',
-    'Magento_Customer/js/model/customer',
-    'Magento_Customer/js/action/check-email-availability',
-    'Magento_Customer/js/action/login',
-    'Magento_Checkout/js/model/quote',
-    'Magento_Checkout/js/checkout-data',
-    'Magento_Checkout/js/model/full-screen-loader',
-    'Magento_Checkout/js/model/step-navigator',
-    'mage/validation'
+    "jquery",
+    "uiComponent",
+    "ko",
+    "Magento_Customer/js/model/customer",
+    "Magento_Customer/js/action/check-email-availability",
+    "Magento_Customer/js/action/login",
+    "Magento_Checkout/js/model/quote",
+    "Magento_Checkout/js/checkout-data",
+    "Magento_Checkout/js/model/full-screen-loader",
+    "Magento_Checkout/js/model/step-navigator",
+    "mage/validation"
 ], function ($, Component, ko, customer, checkEmailAvailability, loginAction, quote, checkoutData, fullScreenLoader, stepNavigator) {
-    'use strict';
+    "use strict";
 
     var validatedEmail;
 
@@ -35,15 +35,15 @@ define([
 
     return Component.extend({
         defaults: {
-            template: 'O2TI_FullCheckout/form/element/identify-by-email',
+            template: "O2TI_FullCheckout/form/element/identify-by-email",
             email: checkoutData.getInputFieldEmailValue(),
             emailFocused: false,
             isLoading: false,
             isPasswordVisible: false,
             enableNext: false,
             listens: {
-                email: 'emailHasChanged',
-                emailFocused: 'validateEmail'
+                email: "emailHasChanged",
+                emailFocused: "validateEmail"
             },
             ignoreTmpls: {
                 email: true
@@ -85,7 +85,7 @@ define([
          */
         initObservable: function () {
             this._super()
-                .observe(['email', 'emailFocused', 'isLoading', 'isPasswordVisible', 'enableNext']);
+                .observe(["email", "emailFocused", "isLoading", "isPasswordVisible", "enableNext"]);
 
             return this;
         },
@@ -156,8 +156,8 @@ define([
          * @returns {Boolean} - validation result.
          */
         validateEmail: function (focused) {
-            var loginFormSelector = 'form[data-role=email-with-possible-login]',
-                usernameSelector = loginFormSelector + ' input[name=username]',
+            var loginFormSelector = "form[data-role=email-with-possible-login]",
+                usernameSelector = loginFormSelector + " input[name=username]",
                 loginForm = $(loginFormSelector),
                 validator,
                 valid;
@@ -168,7 +168,7 @@ define([
                 valid = !!$(usernameSelector).valid();
 
                 if (valid) {
-                    $(usernameSelector).removeAttr('aria-invalid aria-describedby');
+                    $(usernameSelector).removeAttr("aria-invalid aria-describedby");
                 }
 
                 return valid;
@@ -180,11 +180,11 @@ define([
         },
 
         continueOSC: function() {
-            var loginFormSelector = 'form[data-role=email-with-possible-login]';
+            var loginFormSelector = "form[data-role=email-with-possible-login]";
             if (this.validateEmail()) {
                 stepNavigator.next();
             } else {
-                $(this.loginFormSelector + ' input[name=username]').focus();
+                $(this.loginFormSelector + " input[name=username]").focus();
             }
         },
         // 
@@ -202,7 +202,7 @@ define([
                 loginData[entry.name] = entry.value;
             });
 
-            if (this.isPasswordVisible() && $(loginForm).validation() && $(loginForm).validation('isValid')) {
+            if (this.isPasswordVisible() && $(loginForm).validation() && $(loginForm).validation("isValid")) {
                 fullScreenLoader.startLoader();
                 loginAction(loginData).always(function () {
                     fullScreenLoader.stopLoader();
@@ -212,11 +212,11 @@ define([
 
         resolveInitialEnableNextVisibility: function() {
            
-            if (checkoutData.getInputFieldEmailValue() !== '' && checkoutData.getCheckedEmailValue() === '') {
+            if (checkoutData.getInputFieldEmailValue() !== "" && checkoutData.getCheckedEmailValue() === "") {
                 return true;
             }
 
-            if (checkoutData.getInputFieldEmailValue() !== '' && this.resolveInitialPasswordVisibility() === false) {
+            if (checkoutData.getInputFieldEmailValue() !== "" && this.resolveInitialPasswordVisibility() === false) {
                 return true;
             }
 
@@ -229,11 +229,11 @@ define([
          */
         resolveInitialPasswordVisibility: function () {
             
-            if (checkoutData.getInputFieldEmailValue() !== '' && checkoutData.getCheckedEmailValue() === '') {
+            if (checkoutData.getInputFieldEmailValue() !== "" && checkoutData.getCheckedEmailValue() === "") {
                 return true;
             }
 
-            if (checkoutData.getInputFieldEmailValue() !== '') {
+            if (checkoutData.getInputFieldEmailValue() !== "") {
                 return checkoutData.getInputFieldEmailValue() === checkoutData.getCheckedEmailValue();
             }
 

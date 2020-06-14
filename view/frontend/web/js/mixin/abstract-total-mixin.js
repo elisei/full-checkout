@@ -3,13 +3,13 @@
  * See LICENSE.txt for license details.
  */
 define([
-    'Magento_Checkout/js/model/step-navigator'
+    "Magento_Checkout/js/model/step-navigator"
 ], function (stepNavigator) {
-    'use strict';
+    "use strict";
     return function (targetModule) {
         return targetModule.extend({
             isFullMode: function () {
-                if(stepNavigator.isProcessed('shipping')){
+                if(stepNavigator.isProcessed("shipping")){
                     if (!this.getTotals()) {
                         return false;
                     }

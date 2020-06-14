@@ -3,25 +3,25 @@
  * See LICENSE.txt for license details.
  */
  define([
-    'uiRegistry',
-    'Magento_Ui/js/form/element/abstract',
-    'jquery',
-    'mask'
-], function (registry, abstract, jQuery, mask) {
-    'use strict';
+    "uiRegistry",
+    "Magento_Ui/js/form/element/abstract",
+    "jquery",
+    "mask"
+], function (registry, abstract, $, mask) {
+    "use strict";
     return abstract.extend({
         defaults: {
-            elementTmpl: 'O2TI_FullCheckout/form/element/number'
+            elementTmpl: "O2TI_FullCheckout/form/element/number"
         },
         initialize: function () {
             this._super();
-            jQuery('#'+this.uid).mask(this.mask);
+            $("#"+this.uid).mask(this.mask);
             return this;
         },
         onUpdate: function () {
             var validate = this.validate();
-            this.bubble('update', this.hasChanged());
-            jQuery('#'+this.uid).mask(this.mask);
+            this.bubble("update", this.hasChanged());
+            $("#"+this.uid).mask(this.mask);
         }
     });
 });

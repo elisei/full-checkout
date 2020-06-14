@@ -1,11 +1,11 @@
 define([
-    'jquery',
-    'Magento_Ui/js/lib/validation/utils',
+    "jquery",
+    "Magento_Ui/js/lib/validation/utils",
 ], function($, utils) {
-    'use strict';
+    "use strict";
     return function(validator) {
         validator.addRule(
-            'telephone-br-rule',
+            "telephone-br-rule",
             function (value) {
                if(value.length == 13){
                 
@@ -14,14 +14,14 @@ define([
               return value.length == 14 && value.match(/^([()])([0-9]){2}([)])([0-9]){4,5}([-])([0-9]){4}$/);
                
             },
-            $.mage.__('Insira um telefone válido, pode ser fixo ou celular.')
+            $.mage.__("Insira um telefone válido, pode ser fixo ou celular.")
         );
         validator.addRule(
-            'vatid-br-rule',
+            "vatid-br-rule",
             function (value) {
                if(value.length == 18){
-                let CNPJ = value.replace(/[^\d]+/g,'');
-                if(CNPJ == '') return false;
+                let CNPJ = value.replace(/[^\d]+/g,"");
+                if(CNPJ == "") return false;
                 if (CNPJ.length != 14)
                     return false;
                 if (CNPJ == "00000000000000" || 
@@ -67,8 +67,8 @@ define([
                 // value.match(/^([0-9]){2}([.])([0-9]){3}([.])([0-9]){3}([/])([0-9]){4}([-])([0-9]){2}$/);
                }
                if(value.length == 14){
-                let cpf = value.replace(/[^\d]+/g,'');    
-                if(cpf == '') return false;
+                let cpf = value.replace(/[^\d]+/g,"");    
+                if(cpf == "") return false;
                 if (cpf.length != 11 || 
                     cpf == "00000000000" || 
                     cpf == "11111111111" || 
@@ -103,7 +103,7 @@ define([
                 return true;  
                }
             },
-            $.mage.__('Insira um documento fiscal válido, pode ser CPF ou CNPJ')
+            $.mage.__("Insira um documento fiscal válido, pode ser CPF ou CNPJ")
         );
         return validator;
     }

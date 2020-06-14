@@ -3,12 +3,12 @@
  * See LICENSE.txt for license details.
  */
 define([], function () {
-    'use strict';
+    "use strict";
 
     return function (targetModule) {
         return targetModule.extend({
             defaults: {
-                template: 'O2TI_FullCheckout/payment'
+                template: "O2TI_FullCheckout/payment"
             },
         });
     }

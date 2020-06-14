@@ -3,29 +3,29 @@
  * See LICENSE.txt for license details.
  */
 define([
-    'jquery',
-    'ko',
-    'uiComponent',
-    'underscore',
-    'Magento_Checkout/js/model/step-navigator',
-    'Magento_Customer/js/customer-data',
-    'Magento_Customer/js/model/customer',
-    'Magento_Checkout/js/checkout-data',
-    'mage/translate'
+    "jquery",
+    "ko",
+    "uiComponent",
+    "underscore",
+    "Magento_Checkout/js/model/step-navigator",
+    "Magento_Customer/js/customer-data",
+    "Magento_Customer/js/model/customer",
+    "Magento_Checkout/js/checkout-data",
+    "mage/translate"
 ], function ($, ko, Component, _, stepNavigator, customerData, customer, checkoutData, $t) {
-    'use strict';
+    "use strict";
     return Component.extend({
         defaults: {
-            template: 'O2TI_FullCheckout/identify'
+            template: "O2TI_FullCheckout/identify"
         },
-        identifierSelector: 'form[data-role=email-with-possible-login]',
+        identifierSelector: "form[data-role=email-with-possible-login]",
 
         isVisible: ko.observable(!customer.isLoggedIn()),
 
         initialize: function () {
             this._super();
             if(!customer.isLoggedIn()) {
-                stepNavigator.registerStep('identify', null, $t('Identify'), this.isVisible, _.bind(this.navigate, this), this.sortOrder);
+                stepNavigator.registerStep("identify", null, $t("Identify"), this.isVisible, _.bind(this.navigate, this), this.sortOrder);
             }
             
 
@@ -51,7 +51,7 @@ define([
 
             if (!customer.isLoggedIn()) {
                 $(this.identifierSelector).validation();
-                emailValidationResult = Boolean($(this.identifierSelector + ' input[name=username]').valid());
+                emailValidationResult = Boolean($(this.identifierSelector + " input[name=username]").valid());
             }
             return emailValidationResult;
         },
@@ -60,7 +60,7 @@ define([
             if (this.validateEmail()) {
                 stepNavigator.next();
             } else {
-                $(this.identifierSelector + ' input[name=username]').focus();
+                $(this.identifierSelector + " input[name=username]").focus();
             }
         }
     });

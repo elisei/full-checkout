@@ -3,24 +3,24 @@
  * See LICENSE.txt for license details.
  */
 define([
-'mage/translate'
+"mage/translate"
 ], function ($t) {
-    'use strict';
+    "use strict";
     return function (targetModule) {
         return targetModule.extend({
             getShippingMethodTitle: function () {
-                return '';
+                return "";
             },
             getValue: function(){
                var price;
                 if (!this.isCalculated()) {
                     return this.notCalculatedMessage;
                 }
-                price =  this.totals()['shipping_amount'];
+                price =  this.totals()["shipping_amount"];
                 if(price > 0) {
                     return this.getFormattedPrice(price);
                 } else {
-                    return $t('Free');
+                    return $t("Free");
                 }
             }
         });

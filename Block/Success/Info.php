@@ -3,22 +3,19 @@
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
-
 namespace O2TI\FullCheckout\Block\Success;
 
-use Magento\Framework\Registry;
-use Magento\Framework\View\Element\Template\Context as TemplateContext;
-use Magento\Payment\Helper\Data as PaymentHelper;
 use Magento\Sales\Model\Order\Address;
+use Magento\Framework\View\Element\Template\Context as TemplateContext;
+use Magento\Framework\Registry;
+use Magento\Payment\Helper\Data as PaymentHelper;
 use Magento\Sales\Model\Order\Address\Renderer as AddressRenderer;
 
 /**
- * Invoice view  comments form.
+ * Invoice view  comments form
  *
  * @api
- *
  * @author      Magento Core Team <core@magentocommerce.com>
- *
  * @since 100.0.2
  */
 class Info extends \Magento\Framework\View\Element\Template
@@ -29,7 +26,7 @@ class Info extends \Magento\Framework\View\Element\Template
     protected $_template = 'Magento_Sales::order/info.phtml';
 
     /**
-     * Core registry.
+     * Core registry
      *
      * @var \Magento\Framework\Registry
      */
@@ -47,10 +44,10 @@ class Info extends \Magento\Framework\View\Element\Template
 
     /**
      * @param TemplateContext $context
-     * @param Registry        $registry
-     * @param PaymentHelper   $paymentHelper
+     * @param Registry $registry
+     * @param PaymentHelper $paymentHelper
      * @param AddressRenderer $addressRenderer
-     * @param array           $data
+     * @param array $data
      */
     public function __construct(
         TemplateContext $context,
@@ -85,7 +82,7 @@ class Info extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Retrieve current order model instance.
+     * Retrieve current order model instance
      *
      * @return \Magento\Sales\Model\Order
      */
@@ -95,10 +92,9 @@ class Info extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Returns string with formatted address.
+     * Returns string with formatted address
      *
      * @param Address $address
-     *
      * @return null|string
      */
     public function getFormattedAddress(Address $address)
