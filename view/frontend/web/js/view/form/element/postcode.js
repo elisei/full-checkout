@@ -27,11 +27,10 @@
             $("#"+this.uid).mask(postcodeMask);
             return this;
         },
-        toggleFields: function(element){
+        toggleFields(element){
             if(this.value()){
                 var validate = this.validate().valid;
-                if(validate == true && this.value().length == 9){
-                    
+                if(validate === true && this.value().length === 9){
                     if(registry.get(element.parentName + "." + "street.0")){
                         registry.get(element.parentName + "." + "street.0").visible(true);
                         registry.get(element.parentName + "." + "street.1").visible(true);
@@ -56,7 +55,7 @@
                     registry.get(element.parentName + "." + "city").visible(false);
                 }
                 if(registry.get(element.parentName + "." + "region_id")){
-                                registry.get(element.parentName + "." + "region_id").visible(false);
+                    registry.get(element.parentName + "." + "region_id").visible(false);
                 }
             }
             return this;
@@ -65,12 +64,12 @@
          
             var element = this;
             this.toggleFields(element);
-            if(this.value() && this.value().length == 9){
+            if(this.value() && this.value().length === 9){
                 var validate = this.validate();
                 if(validate.valid == true){
                     var cep = this.value();
-                    var form_key = $.cookie("form_key");
-                    var getaddress = url.build("full_checkout/postcode/address/zipcode/"+cep+"/form_key/"+form_key);
+                    var formKey = $.cookie("form_key");
+                    var getaddress = url.build("full_checkout/postcode/address/zipcode/"+cep+"/form_key/"+formKey);
                     $.ajax({
                         url: getaddress,
                         dataType: "json",

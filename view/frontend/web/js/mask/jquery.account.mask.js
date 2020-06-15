@@ -5,7 +5,7 @@ define([
 ], function ($, url, mask) {
     "use strict";
     return function (config) {
-        function CpfCnpjMaskBehavior(vat) {
+        function setCpfCnpjMaskBehavior(vat) {
            var  lengthDocument = vat.replace(/\D/g, "").length;
             if($("#company").length){
                  if(lengthDocument <= 11){
@@ -15,10 +15,10 @@ define([
                 }
             }
             return lengthDocument  <= 11 ? "000.000.000-009" : "00.000.000/0000-00";
-        };
+        }
         function completeAddressBr(cep) {
-                var form_key = jQuery.cookie("form_key");
-                var getaddress = url.build("full_checkout/postcode/address/zipcode/"+cep+"/form_key/"+form_key);
+                var formKey = jQuery.cookie("form_key");
+                var getaddress = url.build("full_checkout/postcode/address/zipcode/"+cep+"/form_key/"+formKey);
                 jQuery.ajax({
                     url: getaddress,
                     dataType: "json",
@@ -45,11 +45,11 @@ define([
                         jQuery("#"+number).focus();
                     }
                 });
-        };
+        }
         $(function () {
-            if($(config.maskRegion).selector == $("#country").val()){
+            if($(config.maskRegion).selector === $("#country").val()){
                 $("#zip").mask("00000-000", {
-                                                onComplete: function(cep) {
+                                                onComplete(cep) {
                                                     completeAddressBr(cep);
                                                 }
                                             });
@@ -57,7 +57,7 @@ define([
                 var vat = $("#vat_id");
                 vat.addClass("vatid-br-rule");
                 vat.on("change keyup paste",function(){
-                    var typeMaskVat = CpfCnpjMaskBehavior(vat.val());
+                    var typeMaskVat = setCpfCnpjMaskBehavior(vat.val());
                     vat.mask(typeMaskVat, {clearIfNotMatch: true});
                 });
             }
