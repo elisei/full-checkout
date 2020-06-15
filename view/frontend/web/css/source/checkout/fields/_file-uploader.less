@@ -1,4 +1,6 @@
-// /**
+//
+
+/**
 //  * Copyright © Magento, Inc. All rights reserved.
 //  * See COPYING.txt for license details.
 //  */
@@ -74,15 +76,15 @@
         width: 0;
 
         &:focus {
-            + .file-uploader-button {
+            +.file-uploader-button {
                 box-shadow: 0 0 0 1px @file-uploader-preview-focus__color;
             }
         }
 
         &:disabled {
-            + .file-uploader-button {
+            +.file-uploader-button {
                 cursor: default;
-                opacity: .5;
+                opacity: 0.5;
                 pointer-events: none;
             }
         }
@@ -131,14 +133,15 @@
     .action-remove {
         &:extend(.abs-action-reset all);
         .lib-icon-font (
-                @icon-delete__content,
+            @icon-delete__content,
             @_icon-font: @icons__font-name,
             @_icon-font-size: @file-uploader-delete-icon__font-size,
             @_icon-font-color: @file-uploader-delete-icon__color,
             @_icon-font-color-hover: @file-uploader-delete-icon__hover__color,
             @_icon-font-text-hide: true,
             @_icon-font-display: block
-        );
+        );;
+
         bottom: 4px;
         cursor: pointer;
         display: block;
@@ -153,7 +156,7 @@
 
     &:hover {
         .preview-image img,
-        .preview-link:before {
+        .preview-link::before {
             opacity: @file-uploader-preview__opacity;
         }
     }
@@ -177,14 +180,14 @@
 
     .preview-video {
         .lib-icon-font(
-                @icon-file__content,
+            @icon-file__content,
             @_icon-font: @icons__font-name,
             @_icon-font-size: @file-uploader-video-icon__size,
             @_icon-font-color: @file-uploader-video-icon__color,
             @_icon-font-color-hover: @file-uploader-video-icon__color
         );
 
-        &:before {
+        &::before {
             left: 0;
             margin-top: -@file-uploader-video-icon__size / 2;
             position: absolute;
@@ -196,14 +199,14 @@
 
     .preview-document {
         .lib-icon-font(
-                @icon-file__content,
+            @icon-file__content,
             @_icon-font: @icons__font-name,
             @_icon-font-size: @file-uploader-document-icon__size,
             @_icon-font-color: @file-uploader-document-icon__color,
             @_icon-font-color-hover: @file-uploader-document-icon__color
         );
 
-        &:before {
+        &::before {
             left: 0;
             margin-top: -@file-uploader-document-icon__size / 2;
             position: absolute;
@@ -243,6 +246,7 @@
 
     .file-uploader-filename {
         .lib-text-overflow();
+
         max-width: @file-uploader-preview__width;
         word-break: break-all;
 
@@ -270,14 +274,14 @@
 .file-uploader-placeholder {
     &.placeholder-document {
         .lib-icon-font(
-                @icon-file__content,
+            @icon-file__content,
             @_icon-font: @icons__font-name,
             @_icon-font-size: 5rem,
             @_icon-font-color: @file-uploader-placeholder-icon__color,
             @_icon-font-color-hover: @file-uploader-placeholder-icon__color
         );
 
-        &:before {
+        &::before {
             left: 0;
             position: absolute;
             right: 0;
@@ -288,14 +292,14 @@
 
     &.placeholder-image {
         .lib-icon-font(
-                @icon-file__content,
+            @icon-file__content,
             @_icon-font: @icons__font-name,
             @_icon-font-size: 5rem,
             @_icon-font-color: @file-uploader-placeholder-icon__color,
             @_icon-font-color-hover: @file-uploader-placeholder-icon__color
         );
 
-        &:before {
+        &::before {
             left: 0;
             position: absolute;
             right: 0;
@@ -306,14 +310,14 @@
 
     &.placeholder-video {
         .lib-icon-font(
-                @icon-file__content,
+            @icon-file__content,
             @_icon-font: @icons__font-name,
             @_icon-font-size: 3rem,
             @_icon-font-color: @file-uploader-placeholder-icon__color,
             @_icon-font-color-hover: @file-uploader-placeholder-icon__color
         );
 
-        &:before {
+        &::before {
             left: 0;
             position: absolute;
             right: 0;
@@ -349,7 +353,7 @@
         }
 
         .file-uploader-button {
-            &:before {
+            &::before {
                 display: none;
             }
         }
@@ -367,9 +371,9 @@
         top: 0;
         z-index: @data-grid-file-uploader-image__z-index;
 
-        + .file-uploader-area {
+        +.file-uploader-area {
             .file-uploader-button {
-                &:before {
+                &::before {
                     display: none;
                 }
             }
@@ -394,7 +398,7 @@
         text-align: center;
 
         .lib-icon-font (
-                @icon-file__content,
+            @icon-file__content,
             @_icon-font: @icons__font-name,
             @_icon-font-size: 1.3rem,
             @_icon-font-line-height: @data-grid-file-uploader-upload-icon__line-height,
@@ -402,7 +406,7 @@
             @_icon-font-color-hover: @data-grid-file-uploader-upload-icon__hover__color,
             @_icon-font-text-hide: true,
             @_icon-font-display: block
-        );
+        );;;;;;;;;
     }
 
     .action-select-wrap {
@@ -416,19 +420,19 @@
             padding: 0;
             width: @data-grid-file-uploader-menu-button__width;
 
-            &:after {
+            &::after {
                 border-color: @data-grid-file-uploader-upload-icon__color transparent transparent transparent;
                 left: 50%;
                 margin: 0 0 0 -5px;
             }
 
             &:hover {
-                &:after {
+                &::after {
                     border-color: @data-grid-file-uploader-upload-icon__hover__color transparent transparent transparent;
                 }
             }
 
-            > span {
+            >span {
                 display: none;
             }
         }

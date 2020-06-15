@@ -30,16 +30,15 @@
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
 
-  .opc-progress-bar {
+.opc-progress-bar {
+.lib-css(
+margin, 0 0 @checkout-progress-bar__margin
+);
+counter-reset: i;
+display: block;
+font-size: 0;
+}
 
-    .lib-css(
-      margin, 0 0 @checkout-progress-bar__margin
-    );
-    counter-reset: i;
-    display: block;
-    font-size: 0;
-  }
-  
   .opc-progress-bar-item {
 
     .lib-css(
