@@ -29,7 +29,7 @@
         onUpdate() {
             var validate = this.validate();
             this.bubble("update", this.hasChanged());
-            $("#"+this.uid).mask(this.CpfCnpjMaskBehavior());
+            $("#"+this.uid).mask(this.maskToCpfCnpjMaskBehavior());
         }
     });
 });
