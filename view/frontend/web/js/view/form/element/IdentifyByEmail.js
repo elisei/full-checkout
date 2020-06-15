@@ -140,7 +140,7 @@ define([
          * 3 - The request is in process
          */
         validateRequest() {
-            if (this.checkRequest != null && $.inArray(this.checkRequest.readyState, [1, 2, 3])) {
+            if (this.checkRequest !== null && $.inArray(this.checkRequest.readyState, [1, 2, 3])) {
                 this.checkRequest.abort();
                 this.checkRequest = null;
             }

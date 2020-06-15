@@ -4,7 +4,7 @@ define([], function () {
     var mixin = {
         getTemplate() {
             var template = this._super();
-            if(template === "ui/form/field" || template == "ui/group/group"){
+            if(template === "ui/form/field" || template  === "ui/group/group"){
                 template = "O2TI_FullCheckout/form/field";
             }
             return template;
