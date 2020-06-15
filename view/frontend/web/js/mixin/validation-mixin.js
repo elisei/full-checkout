@@ -3,9 +3,14 @@ define([
     "Magento_Ui/js/lib/validation/utils",
 ], function($, utils) {
     "use strict";
-    function invalidadosComuns(value) {
-        if (value === "00000000000000" || value === "11111111111111" || value === "22222222222222" || value === "33333333333333" || value === "44444444444444" || value === "55555555555555" || value === "66666666666666" || value === "77777777777777" || value === "88888888888888" ||  value === "99999999999999" ||
-             value === "00000000000" || value === "11111111111" || value === "22222222222" || value === "33333333333" || value === "44444444444" || value === "55555555555" || value === "66666666666" || value === "77777777777" || value === "88888888888" || value === "99999999999") {
+    function invalidosComunsCNPJ(value) {
+        if (value === "00000000000000" || value === "11111111111111" || value === "22222222222222" || value === "33333333333333" || value === "44444444444444" || value === "55555555555555" || value === "66666666666666" || value === "77777777777777" || value === "88888888888888" ||  value === "99999999999999") {
+            return true;
+        }
+        return false
+    };
+    function invalidosComunsCPF(value){
+        if( value === "00000000000" || value === "11111111111" || value === "22222222222" || value === "33333333333" || value === "44444444444" || value === "55555555555" || value === "66666666666" || value === "77777777777" || value === "88888888888" || value === "99999999999"){
             return true;
         }
         return false
@@ -17,7 +22,7 @@ define([
             return false; 
         }
 
-        if(invalidadosComuns(cpf)) {
+        if(invalidosComunsCPF(cpf)) {
             return false;
         }
                    
@@ -27,19 +32,18 @@ define([
         for (i=0; i < 9; i ++) {
             add += parseInt(cpf.charAt(i)) * (10 - i);  
         }
-    
             
         rev = 11 - (add % 11);  
         if (rev === 10 || rev === 11) {
             rev = 0;    
         }
-        if (rev !== parseInt(cpf.charAt(9))) {
+        if (rev !== parseInt(cpf.charAt(9), 10)) {
             return false; 
         }
          
         add = 0;    
         for (i = 0; i < 10; i ++){
-            add += parseInt(cpf.charAt(i)) * (11 - i);
+            add += parseInt(cpf.charAt(i), 10) * (11 - i);
         }
     
         rev = 11 - (add % 11); 
@@ -48,20 +52,20 @@ define([
             rev = 0;
         }
             
-        if (rev !== parseInt(cpf.charAt(10))) {
+        if (rev !== parseInt(cpf.charAt(10), 10)) {
             return false;
         }
               
         return true;  
     };
     function validateCNPJ(value) {
-         let cnpj = value.replace(/[^\d]+/g,'');
+         let cnpj = value.replace(/[^\d]+/g,"");
             
             if (cnpj.length !== 14) {
                 return false;
             }
 
-            if(invalidadosComuns(cnpj)) {
+            if(invalidosComunsCNPJ(cnpj)) {
                 return false;
             }
             
@@ -73,13 +77,14 @@ define([
             let i;
             let resultado;
             for (i = tamanho; i >= 1; i--) {
-              soma += numeros.charAt(tamanho - i) * pos--;
-              if (pos < 2) {
+                soma += numeros.charAt(tamanho - i) * pos--;
+                if (pos < 2) {
                     pos = 9;
-              }
+                }
             }
             resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-            if (resultado != digitos.charAt(0)) {
+
+            if (resultado !== parseInt(digitos.charAt(0), 10)) {
                 return false;
             }
                  
@@ -88,17 +93,15 @@ define([
             soma = 0;
             pos = tamanho - 7;
             for (i = tamanho; i >= 1; i--) {
-              soma += numeros.charAt(tamanho - i) * pos--;
-              if (pos < 2){
+                soma += numeros.charAt(tamanho - i) * pos--;
+                if (pos < 2){
                     pos = 9;
-              }
+                }
             }
             resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
             
-            digitos = parseInt(digitos.charAt(1));
-
-            if (resultado !== digitos){
-               return false; 
+            if (resultado !== parseInt(digitos.charAt(1), 10)){
+                return false; 
             }
                   
             return true;
