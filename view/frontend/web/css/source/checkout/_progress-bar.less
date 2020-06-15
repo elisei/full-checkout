@@ -29,14 +29,12 @@
 @checkout-progress-bar-item-element-outer-radius__width: 6px;
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
-
     .opc-progress-bar {
         .lib-css(margin, 0 0 @checkout-progress-bar__margin);
         counter-reset: i;
         display: block;
         font-size: 0;
     }
-
     .opc-progress-bar-item {
         .lib-css(margin, 0 0 @checkout-progress-bar-item__margin);
         .lib-css(width, @checkout-progress-bar-item__width);
@@ -44,8 +42,7 @@
         position: relative;
         text-align: center;
         vertical-align: top;
-
-        &:before { // Horizontal line
+        &:before {
             .lib-css(background, @checkout-progress-bar-item__background-color);
             .lib-css(border, 1px solid @checkout-progress-bar-item-element-inner__border-color);
             .lib-css(top, @checkout-progress-bar-item-element__width/2);
@@ -56,21 +53,18 @@
             position: absolute;
             width: 100%;
         }
-
         &:first-child {
             &:before {
                 .lib-css(border-top-left-radius, @checkout-progress-bar-item__border-radius);
                 .lib-css(border-bottom-left-radius, @checkout-progress-bar-item__border-radius);
             }
         }
-
         &:last-child {
             &:before {
                 .lib-css(border-top-right-radius, @checkout-progress-bar-item__border-radius);
                 .lib-css(border-bottom-right-radius, @checkout-progress-bar-item__border-radius);
             }
         }
-
         > span {
             display: inline-block;
             padding-top: 45px;
@@ -78,14 +72,13 @@
             word-wrap: break-word;
 
             .lib-typography(
-            @_color: @checkout-progress-bar-item__color,
-            @_font-family: false,
-            @_font-size: @checkout-progress-bar__font-size,
-            @_font-style: false,
-            @_font-weight: @checkout-progress-bar__font-weight,
-            @_line-height: false
+                @_color: @checkout-progress-bar-item__color,
+                @_font-family: false,
+                @_font-size: @checkout-progress-bar__font-size,
+                @_font-style: false,
+                @_font-weight: @checkout-progress-bar__font-weight,
+                @_line-height: false
             );
-
             &:before, // Item element
             &:after {
                 .lib-css(background, @checkout-progress-bar-item__background-color);
@@ -100,7 +93,6 @@
                 position: absolute;
                 top: 0;
             }
-
             &:after { // Item element inner
                 .lib-css(background, @checkout-progress-bar-item-element-inner__background-color);
                 .lib-css(height, @checkout-progress-bar-item-element-inner__height);
@@ -119,22 +111,18 @@
                 );
             }
         }
-
         &._complete {
             cursor: pointer;
-
             &:hover {
                 &:before {
                     .lib-css(background, @checkout-progress-bar-item__hover__background-color);
                 }
-
                 > span {
                     &:before {
                         .lib-css(background, @checkout-progress-bar-item__hover__background-color);
                     }
                 }
             }
-
             > span {
                 .lib-css(color, @checkout-progress-bar-item__complete__color);
 
@@ -144,7 +132,6 @@
                 }
             }
         }
-
         &._active {
             &:before {
                 .lib-css(background, @checkout-progress-bar-item__active__background-color);
