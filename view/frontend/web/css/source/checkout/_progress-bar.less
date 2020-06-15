@@ -1,12 +1,3 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
-
-//
-//  Variables
-//  _____________________________________________
-
 @checkout-progress-bar__font-size: 18px;
 @checkout-progress-bar__font-weight: @font-weight__light;
 @checkout-progress-bar__margin: @indent__base;
@@ -15,7 +6,7 @@
 @checkout-progress-bar-item__border-radius: 6px;
 @checkout-progress-bar-item__color: @color-gray40;
 @checkout-progress-bar-item__margin: @indent__s;
-@checkout-progress-bar-item__transition: background .3s;
+@checkout-progress-bar-item__transition: background 0.3s;
 @checkout-progress-bar-item__width: 185px;
 
 @checkout-progress-bar-item__active__background-color: @active__color;
@@ -36,26 +27,6 @@
 @checkout-progress-bar-item-element-inner__active__content: @icon-checkmark;
 
 @checkout-progress-bar-item-element-outer-radius__width: 6px;
-
-//
-//  Common
-//  _____________________________________________
-
-& when (@media-common = true) {
-
-    //
-    //  Checkout Progress Bar
-    //  ---------------------------------------------
-
-    // .opc-progress-bar {
-    //     &:extend(.abs-reset-list all);
-    //     display: none;
-    // }
-}
-
-//
-//  Desktop
-//  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
 
