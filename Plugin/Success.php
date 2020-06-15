@@ -37,7 +37,7 @@ class Success
     /**
      * @param \Magento\Checkout\Controller\Onepage\Success $subject
      */
-    public function beforeExecute(\Magento\Checkout\Controller\Onepage\Success $subject)
+    public function beforeExecute()
     {
         $currentOrder = $this->_checkoutSession->getLastRealOrder();
         $this->_coreRegistry->register('current_order', $currentOrder);
