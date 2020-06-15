@@ -1,12 +1,10 @@
-linters:
-  csslint: {  }
-  phpcs:
-    standard: PSR2
-    fixer: true
+linters:  
+       stylelint:
+           config: 'stylelint.config.js'
 files:
-  ignore:
+   ignore:
     - 'bower_components/*'
     - 'node_modules/*'
     - 'vendor/*'
 fixers:
-  enable: true
+    enable: true
