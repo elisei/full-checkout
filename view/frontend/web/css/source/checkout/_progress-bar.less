@@ -29,7 +29,9 @@
 @checkout-progress-bar-item-element-outer-radius__width: 6px;
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
   .opc-progress-bar {
+
     .lib-css(
       margin, 0 0 @checkout-progress-bar__margin
     );
@@ -37,7 +39,9 @@
     display: block;
     font-size: 0;
   }
+  
   .opc-progress-bar-item {
+
     .lib-css(
       margin, 0 0 @checkout-progress-bar-item__margin
     );
@@ -48,7 +52,9 @@
     position: relative;
     text-align: center;
     vertical-align: top;
+    
     &::before {
+
       .lib-css(
         background, @checkout-progress-bar-item__background-color
       );
@@ -67,8 +73,11 @@
       position: absolute;
       width: 100%;
     }
+
     &::first-child {
+
       &::before {
+
         .lib-css(
           border-top-left-radius, @checkout-progress-bar-item__border-radius
         );
@@ -77,6 +86,7 @@
         );
       }
     }
+    
     &::last-child {
       &:before {
       .lib-css(
