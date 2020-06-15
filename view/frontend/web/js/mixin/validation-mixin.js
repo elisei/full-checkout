@@ -8,13 +8,15 @@ define([
             return true;
         }
         return false
-    };
+    }
+    
     function invalidosComunsCPF(value){
         if( value === "00000000000" || value === "11111111111" || value === "22222222222" || value === "33333333333" || value === "44444444444" || value === "55555555555" || value === "66666666666" || value === "77777777777" || value === "88888888888" || value === "99999999999"){
             return true;
         }
         return false
-    };
+    }
+
     function validateCPF (value) {
         let cpf = value.replace(/[^\d]+/g,"");    
         
@@ -30,7 +32,7 @@ define([
         let i;
         let rev; 
         for (i=0; i < 9; i ++) {
-            add += parseInt(cpf.charAt(i)) * (10 - i);  
+            add += parseInt(cpf.charAt(i), 10) * (10 - i);  
         }
             
         rev = 11 - (add % 11);  
@@ -57,7 +59,8 @@ define([
         }
               
         return true;  
-    };
+    }
+
     function validateCNPJ(value) {
          let cnpj = value.replace(/[^\d]+/g,"");
             
@@ -105,7 +108,7 @@ define([
             }
                   
             return true;
-    };
+    }
      
     return function(validator) {
 

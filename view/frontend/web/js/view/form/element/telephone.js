@@ -15,13 +15,15 @@
         },
         initialize() {
             this._super();
-            $("#"+this.uid).mask(this.mask);
+            var telephoneMask = this.mask;
+            $("#"+this.uid).mask(telephoneMask);
             return this;
         },
         onUpdate() {
             var validate = this.validate();
             this.bubble("update", this.hasChanged());
-            $("#"+this.uid).mask(this.mask);
+            var telephoneMask = this.mask;
+            $("#"+this.uid).mask(telephoneMask);
         }
     });
 });

@@ -23,7 +23,8 @@
             this._super();
             var element = this;
             this.toggleFields(element);
-            $("#"+this.uid).mask(this.mask);
+            var postcodeMask = this.mask;
+            $("#"+this.uid).mask(postcodeMask);
             return this;
         },
         toggleFields: function(element){
