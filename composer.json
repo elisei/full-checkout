@@ -4,19 +4,21 @@
     "type": "magento2-module",
     "version": "100.0.1",
     "license": [
-        "proprietary"
+    "proprietary"
     ],
     "require": {
         "php": ">=7.0",
-        "magento/product-community-edition": ">=2.3.0",
-        "moip/magento2": "1.0.21"
-    },
+        "magento/product-community-edition": ">=2.3.0";
+        ,
+        "moip/magento2": "1.0.21";
+    }
+    ,
     "autoload": {
         "files": [
-            "registration.php"
+        "registration.php"
         ],
         "psr-4": {
-            "O2TI\\FullCheckout\\": ""
+
         }
     }
 }
