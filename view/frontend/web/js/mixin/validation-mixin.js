@@ -39,7 +39,7 @@ define([
             }
         }
 
-        if (aux == false) {
+        if (aux === false) {
             return false;
         }
 
@@ -50,11 +50,11 @@ define([
 
         v1 = ((v1 * 10) % 11);
 
-        if (v1 == 10) {
+        if (v1 === 10) {
             v1 = 0;
         }
 
-        if (v1 != cpf[9]) {
+        if (v1 !== cpf[9]) {
             return false;
         }
 
@@ -65,7 +65,7 @@ define([
 
         v2 = ((v2 * 10) % 11);
 
-        if (v2 == 10) {
+        if (v2 === 10) {
             v2 = 0;
         }
 
@@ -94,12 +94,12 @@ define([
         let aux = false;
 
         for (let i = 1; cnpj.length > i; i++) {
-            if (cnpj[i - 1] != cnpj[i]) {
+            if (cnpj[i - 1] !== cnpj[i]) {
                 aux = true;
             }
         }
 
-        if (aux == false) {
+        if (aux === false) {
             return false;
         }
 
@@ -141,7 +141,7 @@ define([
             v2 = (11 - v2);
         }
 
-        if (v2 != cnpj[13]) {
+        if (v2 !== cnpj[13]) {
             return false;
         } else {
             return true;
