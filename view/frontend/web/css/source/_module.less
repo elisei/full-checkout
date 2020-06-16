@@ -6,8 +6,6 @@
 @elements__border-radius: 5px;
 @elements__margin-adjust: 21px;
 & when (@media-common = true) {
-   
-
     .fieldset {
         &.payment {
             .field {
@@ -257,6 +255,7 @@
         .opc-wrapper .social-login {
             .lib-css(margin, @checkout-step-content-mobile__margin);
             .lib-css(padding, 0 15px 25px);
+
             margin-bottom: -@indent__base;
         }
 
@@ -449,13 +448,11 @@
                         position: absolute;
                         top: calc(@label_floating-padding-y + @label_floating-padding-y + @label_floating-padding-y + (2 / 3));
                         background: @color-white;
-                        padding: 5px 10px;
                         z-index: 100;
                         font-size: 13px;
                         font-weight: 500;
                         letter-spacing: 0.4px;
-                        background: #fff;
-                        padding: 10px 20px;
+                        padding: @indent__s @indent__base;
                         border-radius: 3px;
                         border: 1px solid @error__color;
 
