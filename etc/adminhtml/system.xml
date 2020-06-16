@@ -2,7 +2,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/system_file.xsd">
     <system>
         <tab id="o2ti" translate="label" sortOrder="100">
-            <label><![CDATA[<span class='o2ti-logo'>O2TI</span>]]></label>
+            <label>O2TI</label>
         </tab>
         <section id="full_checkout" translate="label" type="text" sortOrder="1500" showInDefault="1" showInWebsite="1" showInStore="1">
             <label>Full Checkout</label>

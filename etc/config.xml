@@ -7,7 +7,7 @@
     <default>
         <full_checkout>
             <general>
-                <disable_discount>1</disable_discount>
+                <disable_discount>0</disable_discount>
             </general>
             <field_order>
                 <firstname>20</firstname>
