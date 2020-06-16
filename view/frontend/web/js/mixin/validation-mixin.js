@@ -75,7 +75,7 @@ define([
                 return false;
             }
 
-            let tamanho = cnpj.length - 2
+            let tamanho = cnpj.length - 2;
             let numeros = cnpj.substring(0, tamanho);
             let digitos = cnpj.substring(tamanho);
             let soma = 0;
