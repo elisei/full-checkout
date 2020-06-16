@@ -7,22 +7,15 @@
 @elements__margin-adjust: 21px;
 & when (@media-common = true) {
     .fieldset {
-        &.payment {
-            .field {
-                &.osc-input-group {
-                    margin-bottom: 20px;
-                    vertical-align: top;
-                    display: inline-block;
-                    box-sizing: border-box;
-                    width: 100%;
-                    padding-left: 10px;
-                }
-            }
-        }
-
         .field {
             &.osc-input-group {
                 position: relative;
+                margin-bottom: @indent__base;
+                vertical-align: top;
+                display: inline-block;
+                box-sizing: border-box;
+                width: 100%;
+                padding-left: @indent__s;
 
                 .control {
                     input[type="text"],
@@ -35,6 +28,9 @@
                     input[type="email"],
                     select {
                         height: unset;
+                        padding: @label_floating-padding-x @label_floating-padding-x;
+                        font-weight: 600;
+                        border-radius: 5px;
 
                         &::focus {
                             box-shadow: @elements__box-shadow;
@@ -72,13 +68,6 @@
                         white-space: nowrap;
                         overflow: hidden;
                         color: #000;
-                    }
-
-                    input,
-                    select {
-                        padding: @label_floating-padding-x @label_floating-padding-x;
-                        font-weight: 600;
-                        border-radius: 5px;
                     }
 
                     &._with-tooltip {
@@ -190,11 +179,11 @@
             flex-direction: row;
             align-items: center;
 
-            input {
+            .radio {
                 flex-basis: 3%;
             }
 
-            label {
+            .label {
                 flex-basis: 97%;
                 cursor: pointer;
 
