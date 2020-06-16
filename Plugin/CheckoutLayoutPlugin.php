@@ -47,6 +47,7 @@ class CheckoutLayoutPlugin
         foreach ($shippingFields as $fieldName => $shippingField) {
             if (isset($fieldOrder[$fieldName])) {
                 $shippingFields[$fieldName]['sortOrder'] = $fieldOrder[$fieldName];
+                $shippingField = $shippingField;
             }
         }
 
@@ -80,6 +81,7 @@ class CheckoutLayoutPlugin
     private function createTooltipFields($fields)
     {
         foreach ($fields as $key => $data) {
+            $data = $data;
             if ($key == 'vat_id') {
                 $fields[$key]['config']['tooltip'] = ['description' => __('O Cpf ou Cnpj é utilizado para envio e emissão de nota fiscal.')];
             }
@@ -91,6 +93,7 @@ class CheckoutLayoutPlugin
     private function createValidationFields($fields)
     {
         foreach ($fields as $key => $data) {
+            $data = $data;
             if ($key == 'vat_id') {
                 $fields[$key]['validation'] = ['required-entry' => 1, 'min_text_len‌​gth' => 14, 'max_text_length' => 18, 'vatid-br-rule' => 1];
             } elseif ($key == 'telephone') {
@@ -106,6 +109,7 @@ class CheckoutLayoutPlugin
     private function changeComponentFields($fields)
     {
         foreach ($fields as $key => $data) {
+            $data = $data;
             if ($key == 'postcode') {
                 $fields[$key]['component'] = 'O2TI_FullCheckout/js/view/form/element/postcode';
                 $fields[$key]['config']['elementTmpl'] = 'O2TI_FullCheckout/form/element/number';
@@ -153,6 +157,7 @@ class CheckoutLayoutPlugin
                                 }
                                 $fields[$key]['children'][$childrenKey]['placeholder'] = $placeholder;
                             }
+                            $childrenData = $childrenData;
                         }
                     } else {
                         $fields[$key]['placeholder'] = $placeholder;
@@ -180,6 +185,7 @@ class CheckoutLayoutPlugin
                             if (!isset($data['mask']) || !$data['mask']) {
                                 $fields[$key]['children'][$childrenKey]['mask'] = $mask;
                             }
+                            $childrenData = $childrenData;
                         }
                     } else {
                         $fields[$key]['mask'] = $mask;
@@ -195,7 +201,7 @@ class CheckoutLayoutPlugin
     {
         $fieldOrder = $this->getFieldOrder();
 
-        foreach ($jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']['payment']['children']['payments-list']['children'] as $code => &$payment) {
+        foreach ($jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']['payment']['children']['payments-list']['children'] as &$payment) {
             if (isset($payment['children']['form-fields'])) {
                 $billingFields = &$payment['children']['form-fields']['children'];
                 $billingFields = $this->changeStreetStructure($billingFields);
@@ -206,6 +212,7 @@ class CheckoutLayoutPlugin
                 $billingFields = $this->createPlaceholders($billingFields);
 
                 foreach ($billingFields as $fieldName => $billingField) {
+                    $billingField =  $billingField;
                     if (isset($fieldOrder[$fieldName])) {
                         $billingFields[$fieldName]['sortOrder'] = $fieldOrder[$fieldName];
                     }
@@ -232,7 +239,7 @@ class CheckoutLayoutPlugin
         $jsLayout = $this->changeShippingFields($jsLayout);
         $jsLayout = $this->changeBillingFields($jsLayout);
         $jsLayout = $this->disableDiscountComponent($jsLayout);
-
+        $layoutProcessor = $layoutProcessor;
         return $jsLayout;
     }
 }
