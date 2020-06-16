@@ -1,8 +1,7 @@
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © O2TI. All rights reserved.
  * See COPYING.txt for license details.
  */
-
 define([
     "jquery",
     "underscore",
@@ -30,7 +29,6 @@ define([
 ) {
     "use strict";
 
-    /** Set payment methods to collection */
     paymentService.setPaymentMethods(methodConverter(window.checkoutConfig.paymentMethods));
 
     return Component.extend({

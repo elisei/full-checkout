@@ -1,4 +1,8 @@
-define([
+/**
+ * Copyright © 2019 O2TI. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+ define([
     "jquery",
     "Magento_Ui/js/lib/validation/utils",
 ], function($, utils) {

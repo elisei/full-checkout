@@ -1,6 +1,9 @@
-define([], function () {
+/**
+ * Copyright © 2019 O2TI. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+ define([], function () {
     "use strict";
-
     var mixin = {
         getTemplate() {
             var template = this._super();
@@ -10,7 +13,6 @@ define([], function () {
             return template;
         }
     };
-
     return function (target) {
         return target.extend(mixin);
     };

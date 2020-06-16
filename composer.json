@@ -3,20 +3,20 @@
     "description": "Full Checkout by O2TI",
     "type": "magento2-module",
     "license": [
-    "proprietary"
+        "OSL-3.0",
+        "AFL-3.0"
     ],
     "require": {
         "php": ">=7.0",
         "magento/product-community-edition": ">=2.3.0",
         "moip/magento2": ">=1.0.21"
-    }
-    ,
+    },
     "autoload": {
         "files": [
-        "registration.php"
+            "registration.php"
         ],
         "psr-4": {
-
+            "O2TI\\FullCheckout\\": ""
         }
     }
 }

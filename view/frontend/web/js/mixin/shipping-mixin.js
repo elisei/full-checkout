@@ -3,8 +3,7 @@
  * See LICENSE.txt for license details.
  */
 define([], function () {
-    "use strict";
-    
+    "use strict";    
     return function (targetModule) {
         return targetModule.extend({
             defaults: {

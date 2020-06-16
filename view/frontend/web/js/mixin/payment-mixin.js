@@ -4,7 +4,6 @@
  */
 define([], function () {
     "use strict";
-
     return function (targetModule) {
         return targetModule.extend({
             defaults: {

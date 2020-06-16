@@ -1,8 +1,7 @@
 /**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Copyright © 2019 O2TI. All rights reserved.
+ * See LICENSE.txt for license details.
  */
-
 define([
     "jquery",
     "uiComponent",

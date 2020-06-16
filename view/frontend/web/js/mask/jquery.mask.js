@@ -1,4 +1,8 @@
-define([
+/**
+ * Copyright (c) 2012 Igor Escobar http://igorescobar.com
+ * See LICENSE.txt for license details.
+ */
+ define([
     "jquery"
 ], function ($) {
     "use strict";
