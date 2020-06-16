@@ -3,7 +3,7 @@ Um Checkout Completo, com tudo que você precisa para atingir altas taxas de con
 
 > Estado
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9e877cf78f844b9a9e40cec175c3aa5a)](https://www.codacy.com/app/jeancesargarcia/moip-sdk-php?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=moip/moip-sdk-php&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9e877cf78f844b9a9e40cec175c3aa5a)](https://www.codacy.com/app/elisei/full-checkout?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=elisei/full-checkout&amp;utm_campaign=Badge_Grade)
 [![StyleCI](https://styleci.io/repos/187421346/shield)](https://styleci.io/repos/187421346)
 
 > Estatísticas
