@@ -57,6 +57,7 @@ class CheckoutLayoutPlugin
     private function changeStreetStructure($fields)
     {
         foreach ($fields as $key => $data) {
+            $data = $data;
             if ($key == 'street') {
                 $defaultPosition = (int) $fields[$key]['sortOrder'];
                 $fields[$key]['config'] = ['template' => 'O2TI_FullCheckout/form/element/addressline', 'fieldTemplate' =>  'O2TI_FullCheckout/form/field'];

@@ -6,11 +6,7 @@
 @elements__border-radius: 5px;
 @elements__margin-adjust: 21px;
 & when (@media-common = true) {
-    input[type="radio"]:not([disabled]) {
-        &:focus {
-            box-shadow: unset;
-        }
-    }
+   
 
     .fieldset {
         &.payment {
@@ -137,10 +133,6 @@
             margin-top: 0;
         }
 
-        .opc-progress-bar-item>span {
-
-        }
-
         .page-header {
             .header-in-line-content {
                 .header-in-line-content-flex {
@@ -159,10 +151,6 @@
 
         #checkout {
             background-color: @color-white;
-        }
-
-        .content-checkout {
-
         }
 
         .minicart-wrapper {
@@ -269,9 +257,6 @@
         .opc-wrapper .social-login {
             .lib-css(margin, @checkout-step-content-mobile__margin);
             .lib-css(padding, 0 15px 25px);
-        }
-
-        .opc-wrapper .social-login {
             margin-bottom: -@indent__base;
         }
 
@@ -462,7 +447,7 @@
 
                     .field-error {
                         position: absolute;
-                        top: calc(@label_floating-padding-y + @label_floating-padding-y +  @label_floating-padding-y + (2 / 3));
+                        top: calc(@label_floating-padding-y + @label_floating-padding-y + @label_floating-padding-y + (2 / 3));
                         background: @color-white;
                         padding: 5px 10px;
                         z-index: 100;
@@ -508,27 +493,27 @@
                     }
 
                     &[name*="street.1"] {
-                        width: calc(100%/5);
+                        width: calc(100% / 5);
                     }
 
                     &[name*="street.3"] {
-                        width: calc(100%/5);
+                        width: calc(100% / 5);
                     }
 
                     &[name*="street.2"] {
-                        width: calc(100%/3);
+                        width: calc(100% / 3);
                     }
 
                     &[name*="city"] {
-                        width: calc(100%/3);
+                        width: calc(100% / 3);
                     }
 
                     &[name*="region_id"] {
-                        width: calc(100%/3);
+                        width: calc(100% / 3);
                     }
 
                     &[name*="region"] {
-                        width: calc(100%/3);
+                        width: calc(100% / 3);
                     }
 
                     &[name*="country_id"] {
