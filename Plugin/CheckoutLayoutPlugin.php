@@ -212,7 +212,7 @@ class CheckoutLayoutPlugin
                 $billingFields = $this->createPlaceholders($billingFields);
 
                 foreach ($billingFields as $fieldName => $billingField) {
-                    $billingField =  $billingField;
+                    $billingField = $billingField;
                     if (isset($fieldOrder[$fieldName])) {
                         $billingFields[$fieldName]['sortOrder'] = $fieldOrder[$fieldName];
                     }
@@ -240,6 +240,7 @@ class CheckoutLayoutPlugin
         $jsLayout = $this->changeBillingFields($jsLayout);
         $jsLayout = $this->disableDiscountComponent($jsLayout);
         $layoutProcessor = $layoutProcessor;
+
         return $jsLayout;
     }
 }
