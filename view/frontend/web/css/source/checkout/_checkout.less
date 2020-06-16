@@ -30,12 +30,6 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
-    .checkout-index-index {
-        .page-title-wrapper {
-            &:extend(.abs-visually-hidden all);
-        }
-    }
-
     .checkout-container {
         &:extend(.abs-add-clearfix all);
         .lib-css(margin, 0 0 @checkout-wrapper__margin);
@@ -69,13 +63,9 @@
         .logo {
             margin-left: 0;
         }
-    }
 
-    .checkout-onepage-success {
-        &:extend(.abs-add-clearfix all);
-
-        .print {
-            display: none;
+        .page-title-wrapper {
+            &:extend(.abs-visually-hidden all);
         }
     }
 
@@ -113,6 +103,12 @@
     }
 
     .checkout-onepage-success {
+        &:extend(.abs-add-clearfix all);
+
+        .print {
+            display: none;
+        }
+
         .checkout-success {
             text-align: center;
         }
@@ -181,12 +177,4 @@
 
         padding-right: @indent__l;
     }
-
-    // .checkout-onepage-success {
-    //     .print {
-    //         display: block;
-    //         float: right;
-    //         margin: 23px 0 0;
-    //     }
-    // }
 }
