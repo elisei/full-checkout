@@ -3,13 +3,13 @@
  * See LICENSE.txt for license details.
  */
 define([], function () {
-    "use strict";
-    return function (target) {
-        return target.extend({
-            defaults: {
-                template: "O2TI_FullCheckout/progress-bar",
-                visible: true
-            }
-        });
-    }
+  "use strict";
+  return function (target) {
+    return target.extend({
+      defaults: {
+        template: "O2TI_FullCheckout/progress-bar",
+        visible: true,
+      },
+    });
+  };
 });
