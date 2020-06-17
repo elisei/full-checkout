@@ -19,7 +19,7 @@ define([
         return;
       }
       sortedItems.forEach(function (element) {
-        if (element.code == code) {
+        if (element.code === code) {
           //eslint-disable-line eqeqeq
           element.isVisible(true);
           bodyElem.animate(
@@ -68,7 +68,7 @@ define([
         .sort(this.sortItems)
         .some(function (element) {
           return (
-            (element.code == hashString || element.alias == hashString) &&
+            (element.code === hashString || element.alias === hashString) &&
             element.isVisible()
           ); //eslint-disable-line
         });
@@ -82,7 +82,7 @@ define([
         .steps()
         .sort(this.sortItems)
         .forEach(function (element) {
-          if (element.code == hashString || element.alias == hashString) {
+          if (element.code === hashString || element.alias === hashString) {
             //eslint-disable-line eqeqeq
             element.navigate(element);
           } else {
@@ -91,10 +91,6 @@ define([
         });
 
       return false;
-      // if (hashString === "payment") {
-      //     window.location.href = window.checkoutConfig.checkoutUrl;
-      //     return false;
-      // }
     };
     return targetModule;
   };
