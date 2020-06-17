@@ -7,6 +7,12 @@
 @elements__margin-adjust: 21px;
 & when (@media-common = true) {
     .fieldset {
+        &#identify-by-email-fieldset {
+            .field {
+                padding: 0;
+            }
+        }
+        
         .field {
             &.osc-input-group {
                 position: relative;
@@ -162,8 +168,7 @@
 
                             .product-image-wrapper {
                                 img {
-                                    max-width: 75px;
-                                    max-height: 75px;
+                                    
                                 }
                             }
                         }
@@ -307,7 +312,7 @@
 
 
         // #checkout {
-        // 	margin-top: 50px;
+        //  margin-top: 50px;
         // }
     }
 }
