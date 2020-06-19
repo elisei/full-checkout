@@ -12,7 +12,7 @@
         "moip/magento2": ">=1.0.21"
     },
     "suggest": {
-        "o2ti/social-login": "Module for Social Login",
+        "o2ti/social-login": "Module for Social Login"
     },
     "autoload": {
         "files": [
