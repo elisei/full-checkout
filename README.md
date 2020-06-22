@@ -43,7 +43,7 @@ Um Checkout Completo, com tudo que você precisa para atingir altas taxas de con
 
 ### Instalação e Configuração
 
-Visite nossa [Wiki](wiki)
+Visite nossa [Wiki](https://github.com/elisei/full-checkout/wiki/)
 
 ## License
 
