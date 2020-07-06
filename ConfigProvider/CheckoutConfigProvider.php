@@ -22,7 +22,7 @@ class CheckoutConfigProvider implements ConfigProviderInterface
     public function getConfig()
     {
         return [
-        	'move_address_billing' => $this->scopeConfig->getValue('full_checkout/general/move_address_billing', ScopeInterface::SCOPE_STORE)
+            'move_address_billing' => $this->scopeConfig->getValue('full_checkout/general/move_address_billing', ScopeInterface::SCOPE_STORE),
         ];
     }
 }
