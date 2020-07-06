@@ -167,7 +167,7 @@
 
                             .product-image-wrapper {
                                 img {
-                                    
+                                    max-width: 250px;
                                 }
                             }
                         }
@@ -310,9 +310,6 @@
         }
 
 
-        // #checkout {
-        // 	margin-top: 50px;
-        // }
     }
 }
 
@@ -391,12 +388,11 @@
     .checkout-index-index {
         .checkout-payment-method {
             .step-title {
-                .lib-css(border-bottom, 1px solid  @border-color__base);
-                .lib-css(margin-bottom, @indent__base);
-
+                border-bottom: 1px solid  @border-color__base;
+                margin-bottom: @indent__base;
             }
         }
-        
+
         .safe {
             order: 3;
         }

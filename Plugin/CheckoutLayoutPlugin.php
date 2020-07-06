@@ -30,7 +30,6 @@ class CheckoutLayoutPlugin
     private function disableAuthentication($jsLayout)
     {
         unset($jsLayout['components']['checkout']['children']['authentication']);
-
         return $jsLayout;
     }
 
@@ -219,20 +218,21 @@ class CheckoutLayoutPlugin
                     }
                 }
             }
-        }
-        if (isset($jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']['payment']['children']['afterMethods']['children']['billing-address-form'])) {
-            $billingFieldsAddressOnPage = &$jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']['payment']['children']['afterMethods']['children']['billing-address-form']['children']['form-fields']['children'];
-            $billingFieldsAddressOnPage = $this->changeStreetStructure($billingFieldsAddressOnPage);
-            $billingFieldsAddressOnPage = $this->createMaskFields($billingFieldsAddressOnPage);
-            $billingFieldsAddressOnPage = $this->changeComponentFields($billingFieldsAddressOnPage);
-            $billingFieldsAddressOnPage = $this->createValidationFields($billingFieldsAddressOnPage);
-            $billingFieldsAddressOnPage = $this->createTooltipFields($billingFieldsAddressOnPage);
-            $billingFieldsAddressOnPage = $this->createPlaceholders($billingFieldsAddressOnPage);
 
-            foreach ($billingFieldsAddressOnPage as $fieldName => $billingField) {
+        }
+        if(isset($jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']['payment']['children']['afterMethods']['children']['billing-address-form'])) {
+            $billingAddressOnPage = &$jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']['payment']['children']['afterMethods']['children']['billing-address-form']['children']['form-fields']['children'];
+            $billingAddressOnPage = $this->changeStreetStructure($billingAddressOnPage);
+            $billingAddressOnPage = $this->createMaskFields($billingAddressOnPage);
+            $billingAddressOnPage = $this->changeComponentFields($billingAddressOnPage);
+            $billingAddressOnPage = $this->createValidationFields($billingAddressOnPage);
+            $billingAddressOnPage = $this->createTooltipFields($billingAddressOnPage);
+            $billingAddressOnPage = $this->createPlaceholders($billingAddressOnPage);
+
+            foreach ($billingAddressOnPage as $fieldName => $billingField) {
                 $billingField = $billingField;
                 if (isset($fieldOrder[$fieldName])) {
-                    $billingFieldsAddressOnPage[$fieldName]['sortOrder'] = $fieldOrder[$fieldName];
+                    $billingAddressOnPage[$fieldName]['sortOrder'] = $fieldOrder[$fieldName];
                 }
             }
         }
@@ -240,16 +240,14 @@ class CheckoutLayoutPlugin
         return $jsLayout;
     }
 
-    private function moveAddressBilling($jsLayout)
-    {
-        if ($this->scopeConfig->getValue('full_checkout/general/move_address_billing', ScopeInterface::SCOPE_STORE)) {
-            if (isset($jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']['payment']['children']['afterMethods']['children']['billing-address-form'])) {
+    private function moveAddressBilling($jsLayout) {
+        if($this->scopeConfig->getValue('full_checkout/general/move_address_billing', ScopeInterface::SCOPE_STORE)){
+            if(isset($jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']['payment']['children']['afterMethods']['children']['billing-address-form'])){
                 $billingAddressForm = $jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']['payment']['children']['afterMethods']['children']['billing-address-form'];
                 $jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']['payment']['children']['billingAddress']['children']['billing-address-form'] = $billingAddressForm;
                 unset($jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']['payment']['children']['afterMethods']['children']['billing-address-form']);
             }
         }
-
         return $jsLayout;
     }
 
