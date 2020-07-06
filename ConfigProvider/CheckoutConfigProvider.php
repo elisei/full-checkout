@@ -8,6 +8,7 @@ namespace O2TI\FullCheckout\ConfigProvider;
 
 use Magento\Checkout\Model\ConfigProviderInterface;
 use Magento\Framework\App\Config\ScopeConfigInterface;
+use Magento\Store\Model\ScopeInterface;
 
 class CheckoutConfigProvider implements ConfigProviderInterface
 {
@@ -20,6 +21,8 @@ class CheckoutConfigProvider implements ConfigProviderInterface
 
     public function getConfig()
     {
-        return [];
+        return [
+        	'move_address_billing' => $this->scopeConfig->getValue('full_checkout/general/move_address_billing', ScopeInterface::SCOPE_STORE)
+        ];
     }
 }

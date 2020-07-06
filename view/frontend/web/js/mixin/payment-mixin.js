@@ -7,7 +7,10 @@ define([], function () {
   return function (targetModule) {
     return targetModule.extend({
       defaults: {
-        template: "O2TI_FullCheckout/payment",
+        template: "O2TI_FullCheckout/payment"
+      },
+      isVisibleTitleForAddress() {
+      	return window.checkoutConfig.move_address_billing;
       },
     });
   };

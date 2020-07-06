@@ -24,6 +24,12 @@
                 <!-- ko foreach: getRegion('beforeMethods') -->
                     <!-- ko template: getTemplate() --><!-- /ko -->
                 <!-- /ko -->
+                <!-- ko if: (isVisibleTitleForAddress()) -->
+                    <div class="step-title" translate="'Billing Address'" data-role="title"  />
+                <!-- /ko -->
+                <!-- ko foreach: getRegion('billingAddress') -->
+                    <!-- ko template: getTemplate() --><!-- /ko -->
+                <!-- /ko -->
                 <div id="checkout-payment-method-load" class="opc-payment" data-bind="visible: isPaymentMethodsAvailable">
                     <!-- ko foreach: getRegion('payment-methods-list') -->
                         <!-- ko template: getTemplate() --><!-- /ko -->
