@@ -3,16 +3,13 @@
     Copyright © 2019 O2TI. All rights reserved.
     See LICENSE.txt for license details.
 -->
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="checkout" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="full_checkout" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="full_checkout"/>
     <body>
-         <referenceContainer name="page.wrapper">
-            <container name="checkout.header.container" as="checkout_header_container" label="Checkout Page Header Container" htmlTag="header" htmlClass="page-checkout-store-header" before="main.content">
-                <container name="checkout.header.wrapper" label="Checkout Page Header" as="checkout_header_wrapper" htmlTag="div" htmlClass="checkout-store-header content"/>
-            </container>
-        </referenceContainer>
-        <referenceBlock name="header.container" remove="true" />
+       <!--  
+        <referenceContainer name="header.container" remove="true" />
         <referenceContainer name="footer-container"  remove="true"/>
-        <move element="logo" destination="checkout.header.wrapper"/>
+        <referenceBlock name="navigation.sections" remove="true" /> -->
         <referenceBlock name="checkout.root">
             <action method="setTemplate">
                 <argument name="template" xsi:type="string">O2TI_FullCheckout::onepage.phtml</argument>
@@ -26,6 +23,11 @@
                                 <item name="template" xsi:type="string">O2TI_FullCheckout/onepage</item>
                             </item>
                             <item name="children" xsi:type="array">
+                                <item name="logoBar" xsi:type="array" >
+                                    <item name="sortOrder" xsi:type="string">1</item>
+                                    <item name="component" xsi:type="string">O2TI_FullCheckout/js/view/header/logo</item>
+                                    <item name="displayArea" xsi:type="string">logoBar</item>
+                                </item>
                                 <item name="progressBar" xsi:type="array" >
                                     <item name="sortOrder" xsi:type="string">10</item>
                                     <item name="component" xsi:type="string">Magento_Checkout/js/view/progress-bar</item>
@@ -34,6 +36,35 @@
                                         <item name="deps" xsi:type="array">
                                             <item name="0" xsi:type="string">checkout.steps.shipping-step.shippingAddress</item>
                                             <item name="1" xsi:type="string">checkout.steps.billing-step.payment</item>
+                                        </item>
+                                    </item>
+                                </item>
+                                <item name="sidebar" xsi:type="array">
+                                    <item name="config" xsi:type="array">
+                                        <item name="template" xsi:type="string">O2TI_FullCheckout/sidebar</item>
+                                    </item>
+                                    <item name="children" xsi:type="array">
+                                        <item name="summary" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="cart_items" xsi:type="array">
+                                                    <item name="sortOrder" xsi:type="string">10</item>
+                                                </item>
+                                                <item name="discount" xsi:type="array">
+                                                    <item name="sortOrder" xsi:type="string">20</item>
+                                                    <item name="component" xsi:type="string">Magento_SalesRule/js/view/payment/discount</item>
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="errors" xsi:type="array">
+                                                            <item name="sortOrder" xsi:type="string">0</item>
+                                                            <item name="component" xsi:type="string">Magento_SalesRule/js/view/payment/discount-messages</item>
+                                                            <item name="displayArea" xsi:type="string">messages</item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                                <item name="totals" xsi:type="array">
+                                                    <item name="sortOrder" xsi:type="string">30</item>
+                                                </item>
+
+                                            </item>
                                         </item>
                                     </item>
                                 </item>

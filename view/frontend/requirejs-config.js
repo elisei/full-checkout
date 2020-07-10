@@ -23,6 +23,9 @@ var config = {
             "Magento_Checkout/js/model/step-navigator": {
                 "O2TI_FullCheckout/js/mixin/step-navigator-mixin": true
             },
+            "Magento_Checkout/js/action/select-shipping-method": {
+                "O2TI_FullCheckout/js/mixin/action/select-shipping-method-mixin": true
+            },
             "Magento_Checkout/js/view/progress-bar": {
                 "O2TI_FullCheckout/js/mixin/progress-bar-mixin": true
             },
@@ -32,14 +35,26 @@ var config = {
             "Magento_Checkout/js/view/payment": {
                 "O2TI_FullCheckout/js/mixin/payment-mixin": true
             },
+            "Magento_Checkout/js/view/shipping-information": {
+                "O2TI_FullCheckout/js/mixin/shipping-information-mixin": true
+            },
             "Magento_Checkout/js/view/summary/shipping": {
                 "O2TI_FullCheckout/js/mixin/summary-shipping-mixin": true
             },
             "Magento_Checkout/js/view/summary/abstract-total": {
                 "O2TI_FullCheckout/js/mixin/abstract-total-mixin": true
             },
-            "Magento_Checkout/js/action/select-shipping-method": {
-                "O2TI_FullCheckout/js/mixin/action/select-shipping-method-mixin": true
+            "Magento_Checkout/js/view/summary/item/details": {
+                "O2TI_FullCheckout/js/mixin/summary/item/details-mixin": true
+            },
+            "Magento_Checkout/js/view/summary/item/details/thumbnail": {
+                "O2TI_FullCheckout/js/mixin/summary/item/details/thumbnail-mixin": true
+            },
+            "Magento_Checkout/js/view/summary/cart-items": {
+                "O2TI_FullCheckout/js/mixin/summary/cart-items-mixin": true
+            },
+            "Magento_SalesRule/js/view/payment/discount": {
+                "O2TI_FullCheckout/js/mixin/sales-rule/payment/discount-mixin": true
             }
         }
     }

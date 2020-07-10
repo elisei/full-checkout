@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © 2019 Magento. All rights reserved.
+ * Copyright © 2019 O2TI. All rights reserved.
  * See LICENSE.txt for license details.
  */
 use Magento\Framework\Component\ComponentRegistrar;

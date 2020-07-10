@@ -18,7 +18,7 @@ define(["mage/translate"], function ($t) {
         if (price > 0) {
           return this.getFormattedPrice(price);
         } else {
-          return $t("Free");
+          return this.notCalculatedMessage;
         }
       },
     });

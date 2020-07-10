@@ -26,20 +26,11 @@ define([
             {
               scrollTop: $("#" + code).offset().top,
             },
-            0,
+            300,
             function () {
               window.location = window.checkoutConfig.checkoutUrl + "#" + code;
             }
           );
-
-          if (scrollToElementId && $("#" + scrollToElementId).length) {
-            bodyElem.animate(
-              {
-                scrollTop: $("#" + scrollToElementId).offset().top,
-              },
-              0
-            );
-          }
         } else {
           element.isVisible(false);
         }
@@ -91,6 +82,25 @@ define([
         });
 
       return false;
+    };
+
+    targetModule.next = function () {
+        var activeIndex = 0,
+            code;
+
+        targetModule.steps().sort(this.sortItems).forEach(function (element, index) {
+            if (element.isVisible()) {
+                element.isVisible(false);
+                activeIndex = index;
+            }
+        });
+
+        if (targetModule.steps().length > activeIndex + 1) {
+            code = targetModule.steps()[activeIndex + 1].code;
+            targetModule.steps()[activeIndex + 1].isVisible(true);
+            targetModule.setHash(code);
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
+        }
     };
     return targetModule;
   };

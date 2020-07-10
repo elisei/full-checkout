@@ -4,7 +4,7 @@
  * See COPYING.txt for license details.
  */
 -->
-<li id="shipping" class="checkout-shipping-address" data-bind="fadeVisible: visible()">
+<li id="shipping" class="checkout-shipping-address" data-bind="visible: visible()">
     <div class="step-title" translate="'Shipping Address'" data-role="title" />
     <div id="checkout-step-shipping"
          class="step-content"
@@ -37,7 +37,7 @@
 <!--Shipping method template-->
 <li id="opc-shipping_method"
     class="checkout-shipping-method"
-    data-bind="fadeVisible: visible(), blockLoader: isLoading"
+    data-bind="visible: visible(), blockLoader: isLoading"
     role="presentation">
     <div class="checkout-shipping-method">
         <div class="step-title"

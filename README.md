@@ -18,14 +18,14 @@ Um Checkout Completo, com tudo que você precisa para atingir altas taxas de con
 
 ### Suporte a compra em Guest
 
-> O módulo foi totalmente pensado para permitir o perfil de compra anônima obtendo ainda todos os dados necessários para pagamento e emissão fiscal da compra.
+> O módulo foi totalmente pensado para permitir o perfil de compra anõnima obtendo ainda todos os dados necessários para pagamento e emissão fiscal da compra.
 
 ### Validação de dados
 
 *   Documento Fiscal (CPF ou CNPJ)
 *   Telefone (Celular ou Fixo)
 *   CEP
-*   Obrigatoridade de campos do endereço para o padrão brasileiro
+*   Obrigatóridade de campos do endereço para o padrão brasileiro
 
 ### Máscaras
 
@@ -43,7 +43,7 @@ Um Checkout Completo, com tudo que você precisa para atingir altas taxas de con
 
 ### Instalação e Configuração
 
-Visite nossa [Wiki](https://github.com/elisei/full-checkout/wiki/)
+Visite nossa [Wiki](wiki)
 
 ## License
 
