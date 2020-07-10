@@ -15,12 +15,10 @@ class CheckoutConfigProvider implements ConfigProviderInterface
 {
     protected $_scopeConfig;
 
-
     /**
      * @var \Magento\MediaStorage\Helper\File\Storage\Database
      */
     protected $_fileStorageHelper;
-
 
     public function __construct(
         ScopeConfigInterface $scopeConfig,
@@ -33,12 +31,11 @@ class CheckoutConfigProvider implements ConfigProviderInterface
     public function getConfig()
     {
         return [
-        	'move_address_billing' => $this->_scopeConfig->getValue('full_checkout/general/move_address_billing', ScopeInterface::SCOPE_STORE),
-            'logo_src' => $this->_logo->getLogoSrc(),
-            'logo_width' => $this->_logo->getLogoWidth(),
-            'logo_height' => $this->_logo->getLogoHeight(),
-            'logo_alt' => $this->_logo->getLogoAlt()
+            'move_address_billing' => $this->_scopeConfig->getValue('full_checkout/general/move_address_billing', ScopeInterface::SCOPE_STORE),
+            'logo_src'             => $this->_logo->getLogoSrc(),
+            'logo_width'           => $this->_logo->getLogoWidth(),
+            'logo_height'          => $this->_logo->getLogoHeight(),
+            'logo_alt'             => $this->_logo->getLogoAlt(),
         ];
     }
-
 }
