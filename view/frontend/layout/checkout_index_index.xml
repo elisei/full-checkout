@@ -3,7 +3,8 @@
     Copyright © 2019 O2TI. All rights reserved.
     See LICENSE.txt for license details.
 -->
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="full_checkout" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <update handle="full_checkout"/>
     <body>
        <!--  
