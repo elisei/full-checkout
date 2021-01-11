@@ -45,8 +45,14 @@ define([
         if (validate === true && this.value().length === 9) {
           if (registry.get(element.parentName + "." + "street.0")) {
             registry.get(element.parentName + "." + "street.0").visible(true);
+          }
+          if (registry.get(element.parentName + "." + "street.1")) {
             registry.get(element.parentName + "." + "street.1").visible(true);
+          }
+          if (registry.get(element.parentName + "." + "street.2")) {
             registry.get(element.parentName + "." + "street.2").visible(true);
+          }
+          if (registry.get(element.parentName + "." + "street.3")) {
             registry.get(element.parentName + "." + "street.3").visible(true);
           }
           if (registry.get(element.parentName + "." + "city")) {
@@ -59,8 +65,14 @@ define([
       } else {
         if (registry.get(element.parentName + "." + "street.0")) {
           registry.get(element.parentName + "." + "street.0").visible(false);
+        }
+        if (registry.get(element.parentName + "." + "street.1")) {
           registry.get(element.parentName + "." + "street.1").visible(false);
+        }
+        if (registry.get(element.parentName + "." + "street.2")) {
           registry.get(element.parentName + "." + "street.2").visible(false);
+        }
+        if (registry.get(element.parentName + "." + "street.3")) {
           registry.get(element.parentName + "." + "street.3").visible(false);
         }
         if (registry.get(element.parentName + "." + "city")) {
