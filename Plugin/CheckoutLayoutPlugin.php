@@ -66,13 +66,13 @@ class CheckoutLayoutPlugin
                 $fields[$key]['children'][1]['label'] = __('Number');
                 $fields[$key]['children'][1]['sortOrder'] = $defaultPosition + 1;
                 $fields[$key]['children'][1]['config']['elementTmpl'] = 'O2TI_FullCheckout/form/element/number';
-                $fields[$key]['children'][2]['label'] = __('Neighborhood');
-                $fields[$key]['children'][2]['sortOrder'] = $defaultPosition + 3;
-                $fields[$key]['children'][3]['label'] = __('Complement');
-                $fields[$key]['children'][3]['sortOrder'] = $defaultPosition + 2;
+                $fields[$key]['children'][2]['label'] = __('Complement');
+                $fields[$key]['children'][2]['sortOrder'] = $defaultPosition + 2;
+                $fields[$key]['children'][3]['label'] = __('Neighborhood');
+                $fields[$key]['children'][3]['sortOrder'] = $defaultPosition + 3;
                 $fields[$key]['children'][0]['validation'] = ['required-entry' => 1, 'min_text_len‌​gth' => 1, 'max_text_length' => 255];
                 $fields[$key]['children'][1]['validation'] = ['required-entry' => 1, 'min_text_len‌​gth' => 1, 'max_text_length' => 15];
-                $fields[$key]['children'][2]['validation'] = ['required-entry' => 1, 'min_text_len‌​gth' => 1, 'max_text_length' => 255];
+                $fields[$key]['children'][3]['validation'] = ['required-entry' => 1, 'min_text_len‌​gth' => 1, 'max_text_length' => 255];
             }
         }
 

@@ -110,9 +110,9 @@ define([
                     .get(element.parentName + "." + "street.0")
                     .value(data.street);
                 }
-                if (registry.get(element.parentName + "." + "street.2")) {
+                if (registry.get(element.parentName + "." + "street.3")) {
                   registry
-                    .get(element.parentName + "." + "street.2")
+                    .get(element.parentName + "." + "street.3")
                     .value(data.neighborhood);
                 }
 
