@@ -76,7 +76,6 @@ class AssociateOrdersGuestToCustomer implements \Magento\Framework\Event\Observe
                         $this->orderRepository->save($order);
                     }
                 } catch (\Magento\Framework\Exception\NoSuchEntityException $e) {
-
                 }
             }
         }
