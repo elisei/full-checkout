@@ -8,6 +8,7 @@
         <full_checkout>
             <general>
                 <disable_discount>0</disable_discount>
+                <associate_guest_to_customer>1</associate_guest_to_customer>
             </general>
             <field_order>
                 <firstname>20</firstname>
