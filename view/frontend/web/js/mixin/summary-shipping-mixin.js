@@ -16,8 +16,7 @@ define(["mage/translate"], function ($t) {
           return this.notCalculatedMessage;
         }
         price = this.totals()["shipping_amount"];
-
-         console.log(price);
+        
         if (price > 0) {
           return this.getFormattedPrice(price);
         }
