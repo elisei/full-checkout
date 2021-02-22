@@ -67,12 +67,16 @@ class AssociateOrdersGuestToCustomer implements \Magento\Framework\Event\Observe
         $order = $this->orderRepository->get($orderIds[0]);
         if ($orderIds && $order->getId() && $order->getCustomerIsGuest()) {
             if ($this->scopeConfig->getValue('full_checkout/general/associate_guest_to_customer')) {
-                $customer = $this->customerRepository->get($order->getCustomerEmail());
-                if ($customer->getId()) {
-                    $order->setCustomerIsGuest(0);
-                    $order->setCustomerId($customer->getId());
-                    $order->setCustomerGroupId($customer->getGroupId());
-                    $this->orderRepository->save($order);
+                try {
+                    $customer = $this->customerRepository->get($order->getCustomerEmail());
+                    if ($customer->getId()) {
+                        $order->setCustomerIsGuest(0);
+                        $order->setCustomerId($customer->getId());
+                        $order->setCustomerGroupId($customer->getGroupId());
+                        $this->orderRepository->save($order);
+                    }
+                } catch (\Magento\Framework\Exception\NoSuchEntityException $e) {
+
                 }
             }
         }
