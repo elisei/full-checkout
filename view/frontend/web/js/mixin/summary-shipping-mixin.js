@@ -11,15 +11,19 @@ define(["mage/translate"], function ($t) {
       },
       getValue() {
         var price;
+
         if (!this.isCalculated()) {
           return this.notCalculatedMessage;
         }
         price = this.totals()["shipping_amount"];
+
+         console.log(price);
         if (price > 0) {
           return this.getFormattedPrice(price);
-        } else {
-          return this.notCalculatedMessage;
         }
+        if (price === 0) {
+          return $t('Free Shipping');
+        } 
       },
     });
   };
