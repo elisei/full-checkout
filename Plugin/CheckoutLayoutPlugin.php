@@ -8,6 +8,8 @@ namespace O2TI\FullCheckout\Plugin;
 
 use Magento\Checkout\Block\Checkout\LayoutProcessor;
 use Magento\Framework\App\Config\ScopeConfigInterface;
+use Magento\ReCaptchaUi\Model\IsCaptchaEnabledInterface;
+use Magento\ReCaptchaUi\Model\UiConfigResolverInterface;
 use Magento\Store\Model\ScopeInterface;
 
 class CheckoutLayoutPlugin
@@ -15,11 +17,20 @@ class CheckoutLayoutPlugin
     const CONFIG_PATH_FIELD_ORDER_PATH = 'full_checkout/field_order';
     const CONFIG_PATH_FIELD_MASK_PATH = 'full_checkout/field_mask/%s';
 
+    private $captchaUiConfigResolver;
+
+    private $isCaptchaEnabled;
+
     private $scopeConfig;
 
-    public function __construct(ScopeConfigInterface $scopeConfig)
-    {
+    public function __construct(
+        ScopeConfigInterface $scopeConfig,
+        UiConfigResolverInterface $captchaUiConfigResolver,
+        IsCaptchaEnabledInterface $isCaptchaEnabled
+    ) {
         $this->scopeConfig = $scopeConfig;
+        $this->captchaUiConfigResolver = $captchaUiConfigResolver;
+        $this->isCaptchaEnabled = $isCaptchaEnabled;
     }
 
     private function getFieldOrder()
@@ -262,6 +273,21 @@ class CheckoutLayoutPlugin
         return $jsLayout;
     }
 
+    private function moveReCaptchaCheckout($jsLayout) {
+        $key = 'customer_login';
+        if ($this->isCaptchaEnabled->isCaptchaEnabledFor($key)) {
+            $jsLayout['components']['checkout']['children']['steps']['children']['identify-step']
+            ['children']['identify-by-email']['children']['recaptcha']['settings'] = $this->captchaUiConfigResolver->get($key);
+        } else {
+            if (isset($jsLayout['components']['checkout']['children']['steps']['children']['identify-step']
+            ['children']['identify-by-email']['children']['recaptcha'])) {
+                unset($jsLayout['components']['checkout']['children']['steps']['children']['identify-step']
+            ['children']['identify-by-email']['children']['recaptcha']);
+            }
+        }
+        return $jsLayout;
+    }
+
     public function aroundProcess(LayoutProcessor $layoutProcessor, callable $proceed, ...$args)
     {
         $jsLayout = $proceed(...$args);
@@ -270,6 +296,7 @@ class CheckoutLayoutPlugin
         $jsLayout = $this->changeBillingFields($jsLayout);
         $jsLayout = $this->disableDiscountComponent($jsLayout);
         $jsLayout = $this->moveAddressBilling($jsLayout);
+        $jsLayout = $this->moveReCaptchaCheckout($jsLayout);
         $layoutProcessor = $layoutProcessor;
 
         return $jsLayout;
