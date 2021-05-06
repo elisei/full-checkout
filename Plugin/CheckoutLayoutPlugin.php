@@ -273,18 +273,17 @@ class CheckoutLayoutPlugin
         return $jsLayout;
     }
 
-    private function moveReCaptchaCheckout($jsLayout) {
+    private function moveReCaptchaCheckout($jsLayout)
+    {
         $key = 'customer_login';
         if ($this->isCaptchaEnabled->isCaptchaEnabledFor($key)) {
-            $jsLayout['components']['checkout']['children']['steps']['children']['identify-step']
-            ['children']['identify-by-email']['children']['recaptcha']['settings'] = $this->captchaUiConfigResolver->get($key);
+            $jsLayout['components']['checkout']['children']['steps']['children']['identify-step']['children']['identify-by-email']['children']['recaptcha']['settings'] = $this->captchaUiConfigResolver->get($key);
         } else {
-            if (isset($jsLayout['components']['checkout']['children']['steps']['children']['identify-step']
-            ['children']['identify-by-email']['children']['recaptcha'])) {
-                unset($jsLayout['components']['checkout']['children']['steps']['children']['identify-step']
-            ['children']['identify-by-email']['children']['recaptcha']);
+            if (isset($jsLayout['components']['checkout']['children']['steps']['children']['identify-step']['children']['identify-by-email']['children']['recaptcha'])) {
+                unset($jsLayout['components']['checkout']['children']['steps']['children']['identify-step']['children']['identify-by-email']['children']['recaptcha']);
             }
         }
+
         return $jsLayout;
     }
 
