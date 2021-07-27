@@ -37,7 +37,6 @@ define([
       this.toggleFields(element);
       var postcodeMask = this.mask;
       $("#" + this.uid).mask(postcodeMask);
-      console.log(this.value());
       return this;
     },
     toggleFields(element) {
@@ -91,10 +90,7 @@ define([
       var element = this;
       this.toggleFields(element);
       if (this.value() && this.value().length === 9) {
-        var validate = this.validate();
-        if (validate.valid === true) {
-          this.getAddressByPostcode();
-        }
+        this.getAddressByPostcode();
       }
     },
     getAddressByPostcode(){
@@ -112,73 +108,73 @@ define([
         dataType: "json",
         timeout: 4000,
       })
-        .done(function (data) {
-          if (data.success) {
-            if (registry.get(element.parentName + "." + "street.0")) {
-              registry
-                .get(element.parentName + "." + "street.0")
-                .value(data.street);
-            }
-            if (registry.get(element.parentName + "." + "street.3")) {
-              registry
-                .get(element.parentName + "." + "street.3")
-                .value(data.neighborhood);
-            }
-
-            if (registry.get(element.parentName + "." + "city")) {
-              registry
-                .get(element.parentName + "." + "city")
-                .value(data.city);
-            }
-            if (registry.get(element.parentName + "." + "region_id")) {
-              registry
-                .get(element.parentName + "." + "region_id")
-                .value(data.uf);
-            }
-            if (registry.get(element.parentName + "." + "country_id")) {
-              registry
-                .get(element.parentName + "." + "country_id")
-                .value("BR");
-            }
-            var number = registry.get(element.parentName + "." + "street.1")
-              .uid;
-            $("#" + number).focus();
+      .done(function (data) {
+        if (data.success) {
+          if (registry.get(element.parentName + "." + "street.0")) {
+            registry
+              .get(element.parentName + "." + "street.0")
+              .value(data.street);
           }
-        })
-        .always(function () {
-          var address = quote.shippingAddress();
-          var serviceUrl, payload;
+          if (registry.get(element.parentName + "." + "street.3")) {
+            registry
+              .get(element.parentName + "." + "street.3")
+              .value(data.neighborhood);
+          }
 
-          serviceUrl = resourceUrlManager.getUrlForEstimationShippingMethodsForNewAddress(
-            quote
-          );
-          payload = JSON.stringify({
-            address: {
-              country_id: registry
-                .get(element.parentName + "." + "country_id")
-                .value(),
-              region_id: registry
-                .get(element.parentName + "." + "region_id")
-                .value(),
-              city: registry.get(element.parentName + "." + "city").value(),
-              postcode: cep,
-            },
-          });
-          shippingService.isLoading(true);
-          storage
-            .post(serviceUrl, payload, false)
-            .done(function (result) {
-              shippingService.setShippingRates(result);
-              shippingService.isLoading(false);
-            })
-            .fail(function (response) {
-              shippingService.setShippingRates([]);
-              errorProcessor.process(response);
-            })
-            .always(function () {
-              shippingService.isLoading(false);
-            });
+          if (registry.get(element.parentName + "." + "city")) {
+            registry
+              .get(element.parentName + "." + "city")
+              .value(data.city);
+          }
+          if (registry.get(element.parentName + "." + "region_id")) {
+            registry
+              .get(element.parentName + "." + "region_id")
+              .value(data.uf);
+          }
+          if (registry.get(element.parentName + "." + "country_id")) {
+            registry
+              .get(element.parentName + "." + "country_id")
+              .value("BR");
+          }
+          var number = registry.get(element.parentName + "." + "street.1")
+            .uid;
+          $("#" + number).focus();
+        }
+      })
+      .always(function () {
+        var address = quote.shippingAddress();
+        var serviceUrl, payload;
+
+        serviceUrl = resourceUrlManager.getUrlForEstimationShippingMethodsForNewAddress(
+          quote
+        );
+        payload = JSON.stringify({
+          address: {
+            country_id: registry
+              .get(element.parentName + "." + "country_id")
+              .value(),
+            region_id: registry
+              .get(element.parentName + "." + "region_id")
+              .value(),
+            city: registry.get(element.parentName + "." + "city").value(),
+            postcode: cep,
+          },
         });
+        shippingService.isLoading(true);
+        storage
+          .post(serviceUrl, payload, false)
+          .done(function (result) {
+            shippingService.setShippingRates(result);
+            shippingService.isLoading(false);
+          })
+          .fail(function (response) {
+            shippingService.setShippingRates([]);
+            errorProcessor.process(response);
+          })
+          .always(function () {
+            shippingService.isLoading(false);
+          });
+      });
     },
   });
 });
