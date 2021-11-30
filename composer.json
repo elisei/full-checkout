@@ -19,7 +19,7 @@
         "o2ti/checkout-identification-step": "100.1.*",
         "o2ti/field-sort-in-checkout": "100.1.*",
         "o2ti/input-masking": "100.1.*",
-        "o2ti/social-login": "100.1.*",
+        "o2ti/social-login": "101.1.*",
         "o2ti/tax-document-validation-br": "100.1.*",
         "o2ti/theme-full-checkout": "100.1.*",
         "ext-json": "*"
