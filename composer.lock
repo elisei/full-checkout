@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3ed7343fbc7585407f04c63783a9dc5f",
+    "content-hash": "a966a84492b29fa6a92c7ef9ddd4c272",
     "packages": [
         {
             "name": "brick/math",
@@ -4844,16 +4844,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.13.1",
+            "version": "v4.13.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "63a79e8daa781cac14e5195e63ed8ae231dd10fd"
+                "reference": "210577fe3cf7badcc5814d99455df46564f3c077"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/63a79e8daa781cac14e5195e63ed8ae231dd10fd",
-                "reference": "63a79e8daa781cac14e5195e63ed8ae231dd10fd",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/210577fe3cf7badcc5814d99455df46564f3c077",
+                "reference": "210577fe3cf7badcc5814d99455df46564f3c077",
                 "shasum": ""
             },
             "require": {
@@ -4892,7 +4892,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2021-11-03T20:52:16+00:00"
+            "time": "2021-11-30T19:35:32+00:00"
         },
         {
             "name": "o2ti/advanced-fields-checkout",
@@ -5004,16 +5004,16 @@
         },
         {
             "name": "o2ti/auto-complete-address-br",
-            "version": "100.1.0",
+            "version": "100.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/elisei/auto-complete-address-br.git",
-                "reference": "67c609f45e3fbe5ce90904079ca8237016ed61c3"
+                "reference": "ce3aea4e329bd9eca40d50f81b1bd5021e445095"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elisei/auto-complete-address-br/zipball/67c609f45e3fbe5ce90904079ca8237016ed61c3",
-                "reference": "67c609f45e3fbe5ce90904079ca8237016ed61c3",
+                "url": "https://api.github.com/repos/elisei/auto-complete-address-br/zipball/ce3aea4e329bd9eca40d50f81b1bd5021e445095",
+                "reference": "ce3aea4e329bd9eca40d50f81b1bd5021e445095",
                 "shasum": ""
             },
             "require": {
@@ -5054,20 +5054,20 @@
                 }
             ],
             "description": "Autocomplete Address for Brazil",
-            "time": "2021-11-29T12:21:35+00:00"
+            "time": "2021-11-30T17:51:23+00:00"
         },
         {
             "name": "o2ti/checkout-identification-step",
-            "version": "100.1.0",
+            "version": "100.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/elisei/checkout-identification-step.git",
-                "reference": "20f01f81a81ef0c823b77aa56bf80929d7616d9d"
+                "reference": "baa0ae9d1c077e8eb66b1145d996f678dc422441"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elisei/checkout-identification-step/zipball/20f01f81a81ef0c823b77aa56bf80929d7616d9d",
-                "reference": "20f01f81a81ef0c823b77aa56bf80929d7616d9d",
+                "url": "https://api.github.com/repos/elisei/checkout-identification-step/zipball/baa0ae9d1c077e8eb66b1145d996f678dc422441",
+                "reference": "baa0ae9d1c077e8eb66b1145d996f678dc422441",
                 "shasum": ""
             },
             "require": {
@@ -5108,20 +5108,20 @@
                 }
             ],
             "description": "Create additional step in unique for customer identification",
-            "time": "2021-11-29T12:21:47+00:00"
+            "time": "2021-11-30T17:37:17+00:00"
         },
         {
             "name": "o2ti/field-sort-in-checkout",
-            "version": "100.1.0",
+            "version": "100.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/elisei/field-sort-in-checkout.git",
-                "reference": "f995de2cc0752906776d6712a31c868d3de65c09"
+                "reference": "92cfbbb1d930faaf93a0aa45e18debefcb9aca8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elisei/field-sort-in-checkout/zipball/f995de2cc0752906776d6712a31c868d3de65c09",
-                "reference": "f995de2cc0752906776d6712a31c868d3de65c09",
+                "url": "https://api.github.com/repos/elisei/field-sort-in-checkout/zipball/92cfbbb1d930faaf93a0aa45e18debefcb9aca8b",
+                "reference": "92cfbbb1d930faaf93a0aa45e18debefcb9aca8b",
                 "shasum": ""
             },
             "require": {
@@ -5162,7 +5162,7 @@
                 }
             ],
             "description": "Sort Fields at Checkout",
-            "time": "2021-11-29T12:21:56+00:00"
+            "time": "2021-11-30T17:54:19+00:00"
         },
         {
             "name": "o2ti/input-masking",
@@ -5220,22 +5220,37 @@
         },
         {
             "name": "o2ti/social-login",
-            "version": "100.1.0",
+            "version": "101.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/elisei/social-login.git",
-                "reference": "0bdf38662bdfe6ec2eaed46e27a6e96c729bb7e8"
+                "reference": "7d4f932a9a0880d6e59fdbfa7bbb6511e9ecb6f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elisei/social-login/zipball/0bdf38662bdfe6ec2eaed46e27a6e96c729bb7e8",
-                "reference": "0bdf38662bdfe6ec2eaed46e27a6e96c729bb7e8",
+                "url": "https://api.github.com/repos/elisei/social-login/zipball/7d4f932a9a0880d6e59fdbfa7bbb6511e9ecb6f1",
+                "reference": "7d4f932a9a0880d6e59fdbfa7bbb6511e9ecb6f1",
                 "shasum": ""
             },
             "require": {
-                "hybridauth/hybridauth": "^3.2"
+                "ext-json": "*",
+                "hybridauth/hybridauth": "^3.2",
+                "magento/framework": "103.0.*",
+                "magento/module-backend": "102.0.*",
+                "magento/module-checkout": "100.4.*",
+                "magento/module-config": "101.2.*",
+                "magento/module-customer": ">=103.0.0",
+                "magento/module-directory": "100.4.*",
+                "magento/module-eav": "102.1.*",
+                "magento/module-sales": "103.0.*",
+                "magento/module-theme": "101.1.*",
+                "magento/module-ui": "101.2.*",
+                "php": ">=7.2"
             },
-            "type": "magento2-module",
+            "require-dev": {
+                "magento/magento-coding-standard": "*"
+            },
+            "type": "library",
             "autoload": {
                 "files": [
                     "registration.php"
@@ -5249,21 +5264,27 @@
                 "OSL-3.0",
                 "AFL-3.0"
             ],
+            "authors": [
+                {
+                    "name": "Bruno Elisei",
+                    "email": "brunoelisei@o2ti.com"
+                }
+            ],
             "description": "Social Login by O2TI",
-            "time": "2021-08-10T20:01:34+00:00"
+            "time": "2021-11-30T19:26:11+00:00"
         },
         {
             "name": "o2ti/tax-document-validation-br",
-            "version": "100.1.0",
+            "version": "100.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/elisei/tax-document-validation-br.git",
-                "reference": "4f4be249af5d2eb480db76bc78cc2714520236cb"
+                "reference": "7022eefa89e5ded45214ffc228cbd7d24207b2c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elisei/tax-document-validation-br/zipball/4f4be249af5d2eb480db76bc78cc2714520236cb",
-                "reference": "4f4be249af5d2eb480db76bc78cc2714520236cb",
+                "url": "https://api.github.com/repos/elisei/tax-document-validation-br/zipball/7022eefa89e5ded45214ffc228cbd7d24207b2c7",
+                "reference": "7022eefa89e5ded45214ffc228cbd7d24207b2c7",
                 "shasum": ""
             },
             "require": {
@@ -5304,20 +5325,20 @@
                 }
             ],
             "description": "Implementation of validation for the fiscal document, in the Brazilian standard",
-            "time": "2021-11-29T12:22:17+00:00"
+            "time": "2021-11-29T19:18:19+00:00"
         },
         {
             "name": "o2ti/theme-full-checkout",
-            "version": "100.1.0",
+            "version": "100.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/elisei/theme-full-checkout.git",
-                "reference": "adc39a4e5ff2e1038c740003209720cd97dd567c"
+                "reference": "7032ddfe758f2a5d0841a4fa82763b11eced3036"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elisei/theme-full-checkout/zipball/adc39a4e5ff2e1038c740003209720cd97dd567c",
-                "reference": "adc39a4e5ff2e1038c740003209720cd97dd567c",
+                "url": "https://api.github.com/repos/elisei/theme-full-checkout/zipball/7032ddfe758f2a5d0841a4fa82763b11eced3036",
+                "reference": "7032ddfe758f2a5d0841a4fa82763b11eced3036",
                 "shasum": ""
             },
             "require": {
@@ -5358,7 +5379,7 @@
                 }
             ],
             "description": "Theme Full Checkout",
-            "time": "2021-11-29T12:22:28+00:00"
+            "time": "2021-11-30T18:17:09+00:00"
         },
         {
             "name": "psr/container",
