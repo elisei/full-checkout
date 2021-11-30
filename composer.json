@@ -12,14 +12,14 @@
         }
     ],
     "require": {
-        "php": ">=7.3",
+        "php": "~7.1.3||~7.2.0||~7.3.0",
         "o2ti/advanced-fields-checkout": "100.0.*",
         "o2ti/advanced-street-address": "100.0.*",
         "o2ti/auto-complete-address-br": "100.0.*",
         "o2ti/checkout-identification-step": "100.0.*",
         "o2ti/field-sort-in-checkout": "100.0.*",
         "o2ti/input-masking": "100.0.*",
-        "o2ti/social-login": "100.0.*",
+        "o2ti/social-login": "101.0.*",
         "o2ti/tax-document-validation-br": "100.0.*",
         "o2ti/theme-full-checkout": "100.0.*",
         "ext-json": "*"
