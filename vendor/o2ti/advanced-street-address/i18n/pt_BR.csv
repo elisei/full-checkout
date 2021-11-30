@@ -1,0 +1,35 @@
+"* Required Fields","* Campos Obrigatórioss"
+"Contact Information","Informações de Contato"
+Address,Endereço
+City,Cidade
+"It's a default billing address.","Este é um endereço de cobrança padrão."
+"Use as my default billing address","Usar como meu endereço padrão de cobrança"
+"It's a default shipping address.","Este é um endereço de entrega padrão."
+"Use as my default shipping address","Usar como meu endereço padrão de entrega"
+"Save Address","Salvar endereço"
+"Go back","Retornar"
+O2TI,O2TI
+"Advanced Street Address","Linhas de Endereço Avançadas"
+"Implement Label and Validation to street fields","Implemente título (label) e validação nas linhas de endereço"
+Enabled,Habilitado
+"Number of Lines in a Street Address","Número de linhas do endereço"
+"Valid range: 1-4","Válido de: 1-4"
+"Apply template to Account","Aplicar a página de 'minha conta'"
+"Form Edit Address/New Address","Formulário de editar endereço/cadastrar endereço"
+"First line of the street","Primeira linha de endereço"
+"Rules for input street_0","Regras para o campo street_0"
+Label,título (label)
+"Use Label","Usar título (label)"
+Validation,Validação
+"Is Required","É obrigatório"
+"Max Length","Máximo de caracteres"
+"Valid range: 1-255","Válido de: 1-255"
+"Second line of the street","Segunda linha de endereço"
+"Rules for input street_1","Regras para o campo street_1"
+"Input Is Number","Input Is Number"
+"Third line of the street","Terceira linha de endereço"
+"Rules for input street_2","Regras para o campo street_2"
+"Fourth line of the street","Quarta linha de endereço"
+"Rules for input street_3","Regras para o campo street_3"
+"Complement","Complemento"
+"District","Bairro"

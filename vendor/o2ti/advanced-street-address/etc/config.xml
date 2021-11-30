@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © O2TI. All rights reserved.
+ * @author    Bruno Elisei <brunoelisei@o2ti.com>
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <advanced_street_address>
+            <general>
+                <enabled>1</enabled>
+                <apply_in_account>1</apply_in_account>
+                <street_first>
+                    <label>
+                        <use_label>1</use_label>
+                        <label>Street</label>
+                    </label>
+                    <validation>
+                        <is_required>1</is_required>
+                        <max_length>57</max_length>
+                    </validation>
+                </street_first>
+                <street_second>
+                    <label>
+                        <use_label>1</use_label>
+                        <label>Number</label>
+                    </label>
+                    <validation>
+                        <is_required>1</is_required>
+                        <max_length>6</max_length>
+                        <is_number>1</is_number>
+                    </validation>
+                </street_second>
+                <street_third>
+                    <label>
+                        <use_label>1</use_label>
+                        <label>Complement</label>
+                    </label>
+                    <validation>
+                        <is_required>0</is_required>
+                        <max_length>30</max_length>
+                    </validation>
+                </street_third>
+                <street_fourth>
+                    <label>
+                        <use_label>1</use_label>
+                        <label>District</label>
+                    </label>
+                    <validation>
+                        <is_required>1</is_required>
+                        <max_length>60</max_length>
+                    </validation>
+                </street_fourth>
+            </general>
+        </advanced_street_address>
+    </default>
+</config>

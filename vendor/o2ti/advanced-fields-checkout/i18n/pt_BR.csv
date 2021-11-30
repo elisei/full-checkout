@@ -1,0 +1,24 @@
+Field,Campo
+Autocomplete,Autocompletar
+Add,Add
+Size,Tamanho
+"Break the line","Aplicar quebra de linha"
+Placeholder,Placeholder
+label,Título
+Enable,Habilitar
+Disable,Desabilitar
+"Password Strength: ","Força da senha: "
+"Show Password","Ver Senha"
+O2TI,O2TI
+"Advanced Fields at Checkout","Opções Avançadas dos Campos do Checkout"
+"Add advanced properties to checkout fields","Adcione propriedades avançadas aos campos do checkout"
+Enabled,Habilitado
+"Set the usage percentage for a column of fields.","Define tamanho de campos"
+"Choose the proportion the field will have on your line.","Escolha a proporção que o campo irá ocupar na linha."
+Fields,Campos
+"To be listed here, the field must be set to visible","Para estar presente na lista o campo precisa estar visível"
+"Sets the field to autocomplete","Definir Autocompletar"
+"Sets the value for the field's autocomplete","Permite definir autocompletar para os campos"
+"To be listed here, the field must be set to visible. View list in https://www.w3.org/WAI/GL/wiki/WCAG_2.1_Implementations/JF/research",""Para estar presente na lista o campo precisa estar visível. Veja todas as opções em: https://www.w3.org/WAI/GL/wiki/WCAG_2.1_Implementations/JF/research"
+"Define placeholder in fields","Definir Placeholder para os campos"
+"Set the placeholder of the fields","Defina o placeholder para cada campo do checkout"

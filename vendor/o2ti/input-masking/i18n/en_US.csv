@@ -1,0 +1,14 @@
+O2TI,O2TI
+"Input Masking","Input Masking"
+"Implement input masks for form fields","Implement input masks for form fields"
+Enabled,Enabled
+"Input in Address Form","Input in Address Form"
+"Address registration form. Present at checkout and address editing on my account","Address registration form. Present at checkout and address editing on my account"
+Telephone,Telephone
+"Apply Mask","Apply Mask"
+"Clean if not match","Clean if not match"
+"Field VatId","Field VatId"
+Postcode,Postcode
+"Input in Account Create Form","Input in Account Create Form"
+"Account creation form","Account creation form"
+"Field Taxvat","Field Taxvat"

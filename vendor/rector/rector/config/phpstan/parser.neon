@@ -1,0 +1,21 @@
+parameters:
+    phpVersion: 80100
+
+services:
+    defaultAnalysisParser:
+        factory: @cachedRectorParser
+        arguments!: []
+
+    cachedRectorParser:
+        class: PHPStan\Parser\CachedParser
+        arguments:
+            originalParser: @rectorParser
+            cachedNodesByStringCountMax: %cache.nodesByStringCountMax%
+        autowired: no
+
+    rectorParser:
+        class: PHPStan\Parser\RichParser
+        arguments:
+            parser: @php8PhpParser
+            lexer: @php8Lexer
+        autowired: no

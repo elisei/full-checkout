@@ -1,0 +1,76 @@
+<!--
+/**
+ * Copyright © 2021 O2TI. All rights reserved.
+ * @author  Bruno Elisei <brunoelisei@o2ti.com>
+ * See LICENSE.txt for license details.
+ */
+-->
+<fieldset class="fieldset hidden-fields data-login" data-bind="visible: isCustomerNotLogged() === true">
+    <legend class="legend" data-bind="text: textLoginAccount()"></legend>
+    <div class="field theme-full-checkout-fields-floating-label">
+        <div class="control _with-button">
+            <div class="control-row">
+                <div class="_additional-element-input">
+                    <input class="input-text"
+                           data-bind="
+                                attr: {
+                                    placeholder: $t('Password'),
+                                }"
+                           type="password"
+                           name="password"
+                           id="customer-password"
+                           data-validate="{required:true}" autocomplete="current-password"/>
+                    <label class="label" for="customer-password">
+                        <span data-bind="i18n: 'Password'"></span>
+                    </label>
+                </div>
+                <div class="_additional-element-addtional">
+                    <!-- ko template: 'O2TI_ThemeFullCheckout/O2TI/CheckoutIdentificationStep/form/element/show-password' --><!-- /ko -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ko foreach: getRegion('additional-login-form-fields') -->
+        <!-- ko template: getTemplate() --><!-- /ko -->
+    <!-- /ko -->
+    <!-- ko if: isRememberMeCheckboxVisible() -->
+        <div id="remember-me-box" class="field choice persistent">
+            <div class="control _with-tooltip">
+                <input class="input-checkbox"
+                        type="checkbox"
+                        data-bind="attr: {
+                                checked: isRememberMeCheckboxChecked(),
+                            }
+                        "
+                       name="persistent_remember_me"
+                       id="persistent-remember-me-identification"
+                       />
+                <label class="label" for="persistent-remember-me-identification">
+                  <span data-bind="i18n: 'Remember Me'"></span>
+                </label>
+                <div class="field-tooltip toggle">
+                    <span class="field-tooltip-action action-remember-me"
+                        tabindex="0"
+                        data-toggle="dropdown"
+                        data-bind="attr: {title: $t('What is this?')}, mageInit: {'dropdown':{'activeClass': '_active'}}">
+                        <span><!-- ko i18n: 'What is this?'--><!-- /ko --></span>
+                    </span>
+                    <div class="field-tooltip-content" data-target="dropdown">
+                        <span translate="'Check &quot;Remember Me&quot; to access your shopping cart on this computer even if you are not signed in.'"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- /ko -->
+    <div class="actions-toolbar">
+        <input name="context" type="hidden" value="checkout" />
+        <div class="primary">
+            <button type="submit" class="action login primary" data-action="checkout-method-login"><span data-bind="i18n: 'Login'"></span></button>
+        </div>
+        <div class="secondary">
+            <a class="action remind" data-bind="attr: { href: forgotPasswordUrl }">
+                <span data-bind="i18n: 'Forgot Your Password?'"></span>
+            </a>
+        </div>
+    </div>
+</fieldset>

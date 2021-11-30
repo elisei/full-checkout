@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © O2TI. All rights reserved.
+ * @author    Bruno Elisei <brunoelisei@o2ti.com>
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="o2ti" translate="label" sortOrder="100">
+            <label>O2TI</label>
+        </tab>
+        <section id="advanced_street_address" translate="label" sortOrder="1600" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Advanced Street Address</label>
+            <tab>o2ti</tab>
+            <resource>O2TI_AdvancedStreetAddress::config</resource>
+            <group id="general" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Advanced Street Address</label>
+                <comment>Implement Label and Validation to street fields</comment>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="street_lines" translate="label comment" sortOrder="20" showInDefault="1" showInWebsite="1" canRestore="1">
+                    <label>Number of Lines in a Street Address</label>
+                    <backend_model>Magento\Customer\Model\Config\Backend\Address\Street</backend_model>
+                    <comment>Valid range: 1-4</comment>
+                    <validate>required-entry validate-digits validate-digits-range digits-range-1-4</validate>
+                    <config_path>customer/address/street_lines</config_path>
+                    <depends>
+                        <field id="*/*/enabled">1</field>
+                    </depends>
+                </field>
+                <field id="apply_in_account" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Apply template to Account</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Form Edit Address/New Address</comment>
+                </field>
+                <group id="street_first" translate="label comment" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>First line of the street</label>
+                    <comment>Rules for input street_0</comment>
+                    <depends>
+                        <field id="*/*/enabled">1</field>
+                    </depends>
+                    <group id="label" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Label</label>
+                        <field id="use_label" translate="label comment" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Use Label</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        </field>
+                        <field id="label" translate="label comment" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Label</label>
+                        </field>
+                    </group>
+                    <group id="validation" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Validation</label>
+                        <field id="is_required" translate="label comment" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Is Required</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        </field>
+                        <field id="max_length" translate="label comment" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Max Length</label>
+                            <comment>Valid range: 1-255</comment>
+                            <validate>required-entry validate-digits validate-digits-range digits-range-1-255</validate>
+                        </field>
+                    </group>
+                </group>
+                <group id="street_second" translate="label comment" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Second line of the street</label>
+                    <comment>Rules for input street_1</comment>
+                    <depends>
+                        <field id="*/*/enabled">1</field>
+                    </depends>
+                    <group id="label" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Label</label>
+                        <field id="use_label" translate="label comment" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Use Label</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        </field>
+                        <field id="label" translate="label comment" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Label</label>
+                        </field>
+                    </group>
+                    <group id="validation" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Validation</label>
+                        <field id="is_required" translate="label comment" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Is Required</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        </field>
+                        <field id="max_length" translate="label comment" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Max Length</label>
+                            <comment>Valid range: 1-255</comment>
+                            <validate>required-entry validate-digits validate-digits-range digits-range-1-255</validate>
+                        </field>
+                        <field id="is_number" translate="label comment" type="select" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Input Is Number</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        </field>
+                    </group>
+                </group>
+                <group id="street_third" translate="label comment" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Third line of the street</label>
+                    <comment>Rules for input street_2</comment>
+                    <depends>
+                        <field id="*/*/enabled">1</field>
+                    </depends>
+                    <group id="label" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Label</label>
+                        <field id="use_label" translate="label comment" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Use Label</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        </field>
+                        <field id="label" translate="label comment" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Label</label>
+                        </field>
+                    </group>
+                    <group id="validation" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Validation</label>
+                        <field id="is_required" translate="label comment" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Is Required</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        </field>
+                        <field id="max_length" translate="label comment" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Max Length</label>
+                            <comment>Valid range: 1-255</comment>
+                            <validate>required-entry validate-digits validate-digits-range digits-range-1-255</validate>
+                        </field>
+                    </group>
+                </group>
+                <group id="street_fourth" translate="label comment" type="text" sortOrder="400" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Fourth line of the street</label>
+                    <comment>Rules for input street_3</comment>
+                    <depends>
+                        <field id="*/*/enabled">1</field>
+                    </depends>
+                    <group id="label" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Label</label>
+                        <field id="use_label" translate="label comment" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Use Label</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        </field>
+                        <field id="label" translate="label comment" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Label</label>
+                        </field>
+                    </group>
+                    <group id="validation" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Validation</label>
+                        <field id="is_required" translate="label comment" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Is Required</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        </field>
+                        <field id="max_length" translate="label comment" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Max Length</label>
+                            <comment>Valid range: 1-255</comment>
+                            <validate>required-entry validate-digits validate-digits-range digits-range-1-255</validate>
+                        </field>
+                    </group>
+                </group>
+            </group>
+        </section>
+    </system>
+</config>

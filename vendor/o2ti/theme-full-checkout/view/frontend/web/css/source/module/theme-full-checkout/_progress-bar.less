@@ -1,0 +1,168 @@
+/**
+ * Copyright © 2021 O2TI. All rights reserved.
+ * @author  Bruno Elisei <brunoelisei@o2ti.com>
+ * See LICENSE.txt for license details.
+ */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .body-full-checkout {
+        .full-checkout {
+            .opc-progress-bar {
+                .lib-css(margin-top, @indent__base + @indent__s);
+                .lib-css(margin-bottom, @indent__base + @indent__s);
+
+                counter-reset: i;
+                display: block;
+                font-size: 0;
+            }
+
+            .opc-progress-bar-item {
+
+                .lib-css(margin, 0);
+                .lib-css(width, @theme-full-checkout-progress-bar-item__width);
+
+                display: inline-block;
+                position: relative;
+                text-align: center;
+                vertical-align: top;
+
+                &::before {
+
+                    .lib-css(background, @theme-full-checkout-progress-bar-item__background-color);
+                    .lib-css(border, 1px solid @theme-full-checkout-progress-bar-item-element-inner__border-color);
+                    .lib-css(top, @theme-full-checkout-progress-bar-item-element__width/2);
+                    .lib-css(transition, @theme-full-checkout-progress-bar-item__transition);
+
+                    content: '';
+                    height: 3px;
+                    left: 0;
+                    position: absolute;
+                    width: 100%;
+                }
+
+                &:first-child {
+                    &::before {
+                        .lib-css(border-top-left-radius, @theme-full-checkout-progress-bar-item__border-radius);
+                        .lib-css(border-bottom-left-radius, @theme-full-checkout-progress-bar-item__border-radius);
+                    }
+                }
+
+                &:last-child {
+                    &::before {
+                        .lib-css(border-top-right-radius, @theme-full-checkout-progress-bar-item__border-radius);
+                        .lib-css(border-bottom-right-radius, @theme-full-checkout-progress-bar-item__border-radius);
+                    }
+                }
+
+                .step-item {
+                    display: inline-block;
+                    padding-top: @theme-full-checkout-progress-bar-item-element__padding-top;
+                    width: 100%;
+                    word-wrap: break-word;
+
+                    .lib-typography(@_color: @theme-full-checkout-progress-bar-item__color, @_font-family: false, @_font-size: @theme-full-checkout-progress-bar__font-size, @_font-style: false, @_font-weight: @theme-full-checkout-progress-bar__font-weight, @_line-height: false);
+
+                    .opc-progress-bar-item-title {
+                        &:extend(.abs-visually-hidden-mobile all);
+                    }
+
+                    &::before,
+                    &::after {
+                        .lib-css(background, @theme-full-checkout-progress-bar-item__background-color);
+                        .lib-css(border, 1px solid @theme-full-checkout-progress-bar-item-element-inner__border-color);
+                        .lib-css(height, @theme-full-checkout-progress-bar-item-element__height);
+                        .lib-css(margin-left, -(@theme-full-checkout-progress-bar-item-element__width/2));
+                        .lib-css(transition, @theme-full-checkout-progress-bar-item__transition);
+                        .lib-css(width, @theme-full-checkout-progress-bar-item-element__width);
+
+                        border-radius: 50%;
+                        content: '';
+                        left: 50%;
+                        position: absolute;
+                        top: 0;
+                    }
+
+                    &::after {
+                        .lib-css(background, @theme-full-checkout-progress-bar-item-element-inner__background-color);
+                        .lib-css(height, @theme-full-checkout-progress-bar-item-element-inner__height);
+                        .lib-css(margin-left, -(@theme-full-checkout-progress-bar-item-element-inner__width/2));
+                        .lib-css(top, @theme-full-checkout-progress-bar-item-element-outer-radius__width);
+                        .lib-css(width, @theme-full-checkout-progress-bar-item-element-inner__width);
+
+                        content: counter(i);
+                        counter-increment: i;
+                        .lib-typography(@_color: @theme-full-checkout-progress-bar-item-element-inner__color, @_font-family: false, @_font-size: @theme-full-checkout-progress-bar__font-size, @_font-style: false, @_font-weight: @font-weight__semibold, @_line-height: false);
+                    }
+                }
+
+                &._complete {
+                    cursor: pointer;
+
+                    &::before {
+                        .lib-css(background, @theme-full-checkout-progress-bar-item__complete__background-color);
+                        .lib-css(border-color, @theme-full-checkout-progress-bar-item-element-inner__complete__border-color);
+                    }
+
+                    &:hover {
+                        &::before {
+                            .lib-css(background, @theme-full-checkout-progress-bar-item__hover__background-color);
+                        }
+
+                        .step-item {
+                            &::before {
+                                .lib-css(background, @theme-full-checkout-progress-bar-item__hover__background-color);
+                            }
+                        }
+                    }
+
+                    .step-item {
+                        .lib-css(color, @theme-full-checkout-progress-bar-item__complete__color);
+
+                        &::before {
+                            .lib-css(background, @theme-full-checkout-progress-bar-item__complete__background-color);
+                            .lib-css(border-color, @theme-full-checkout-progress-bar-item-element-inner__complete__border-color);
+                        }
+
+                        &::after {
+                            .lib-css(color, @theme-full-checkout-progress-bar-item-element-inner__complete__color);
+                            .lib-css(background, @theme-full-checkout-progress-bar-item-element-inner__complete__background-color);
+                            .lib-css(border-color, @theme-full-checkout-progress-bar-item-element-inner__complete__border-color);
+                            .lib-css(font-family, @icons__font-name);
+                            .lib-css(content, @theme-full-checkout-progress-bar-item-element-inner__active__content);
+                        }
+                    }
+                }
+
+                &._active {
+                    &::before {
+                        .lib-css(background, @theme-full-checkout-progress-bar-item__active__background-color);
+                        .lib-css(border-color, @theme-full-checkout-progress-bar-item-element-inner__active__border-color);
+                    }
+
+                    .step-item {
+                        .lib-css(color, @theme-full-checkout-progress-bar-item__active__color);
+                        .lib-css(font-weight, @theme-full-checkout-progress-bar-item__active__font-weight);
+
+                        &::before {
+                            .lib-css(background, @theme-full-checkout-progress-bar-item__active__background-color);
+                            .lib-css(border-color, @theme-full-checkout-progress-bar-item-element-inner__active__border-color);
+                        }
+
+                        &::after {
+                            .lib-css(color, @theme-full-checkout-progress-bar-item-element-inner__active__color);
+                            .lib-css(background, @theme-full-checkout-progress-bar-item-element-inner__active__background-color);
+                            .lib-css(border-color, @theme-full-checkout-progress-bar-item-element-inner__active__border-color);
+                            .lib-css(content, @theme-full-checkout-progress-bar-item-element-inner__active__content);
+                            .lib-css(font-family, @icons__font-name);
+                            .lib-css(line-height, 1.5);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

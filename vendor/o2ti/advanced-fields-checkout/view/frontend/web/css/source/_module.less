@@ -1,0 +1,82 @@
+/**
+ * Copyright © 2021 O2TI. All rights reserved.
+ * @author    Bruno Elisei <brunoelisei@o2ti.com>
+ * See LICENSE.txt for license details.
+ */
+
+//
+//  Variables
+//  _____________________________________________
+
+@advanced-fields-chekcout__width-a-hundred-percent: 100%;
+@advanced-fields-chekcout__width-sixty-percent: 60%;
+@advanced-fields-chekcout__width-fifty-percent: 50%;
+@advanced-fields-chekcout__width-thirty-three-percent: 33%;
+@advanced-fields-chekcout__width-twenty-percent: 20%;
+@advanced-fields-chekcout__padding: @indent__xs;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .fieldset {
+        margin-left: -@advanced-fields-chekcout__padding;
+        margin-right: -@advanced-fields-chekcout__padding;
+
+        .field {
+            display: inline-block;
+            box-sizing: border-box;
+            width: 100%;
+            padding-left: @advanced-fields-chekcout__padding;
+            padding-right: @advanced-fields-chekcout__padding;
+            vertical-align: top;
+
+            &.parent-field {
+                &::after {
+                    clear: none;
+                    content: ' ';
+                    float: left;
+                }
+            }
+
+            &.break-line {
+                &::after {
+                    clear: both;
+                    content: ' ';
+                    float: right;
+                }
+            }
+
+            &.a-hundred-percent {
+                width: @advanced-fields-chekcout__width-a-hundred-percent;
+            }
+
+            &.sixty-percent {
+                width: @advanced-fields-chekcout__width-sixty-percent;
+            }
+
+            &.fifty-percent {
+                width: @advanced-fields-chekcout__width-fifty-percent;
+            }
+
+            &.thirty-three-percent {
+                width: @advanced-fields-chekcout__width-thirty-three-percent;
+
+                &.break-line {
+                    padding-right: 0;
+                }
+            }
+
+            &.twenty-percent {
+                width: @advanced-fields-chekcout__width-twenty-percent;
+            }
+
+            .label {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
+}

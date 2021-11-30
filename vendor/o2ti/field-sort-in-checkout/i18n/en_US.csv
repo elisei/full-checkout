@@ -1,0 +1,15 @@
+label,label
+Field,Field
+"Sort Order","Sort Order"
+Add,Add
+O2TI,O2TI
+"Sort Address at Checkout","Sort Address at Checkout"
+"Note that the ""Create Account"" form type is only available if there is a previous implementation. Meet the O2TI_CheckoutIdentificationStep","Note that the ""Create Account"" form type is only available if there is a previous implementation. Meet the O2TI_CheckoutIdentificationStep"
+Enabled,Enabled
+"Address Sort Order","Address Sort Order"
+"Delivery address and payment form","Delivery address and payment form"
+"Field Address","Field Address"
+"To be listed here, the field must be set to visible","To be listed here, the field must be set to visible"
+"Customer Sort Order","Customer Sort Order"
+"Account creation form","Account creation form"
+"Field Customer and Address (if available)","Field Customer and Address (if available)"

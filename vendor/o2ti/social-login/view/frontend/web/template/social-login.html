@@ -1,0 +1,23 @@
+<!--
+/**
+ * Copyright © 2019 O2TI. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<!-- ko if: isVisible()  -->
+<form class="form social-login"  method="post">
+    <ul class="social-login">
+    	<li data-bind="visible: isEnabled('google')">
+    		<button type="submit" data-bind="attr: { formaction: getRedirectUrl('google') }" class="button btn-social-link btn-google" rel="noopener noreferrer nofollow" ><span><span>Continue com Google</span></span></button>
+    	</li>
+        <li data-bind="visible: isEnabled('facebook')">
+        	<button type="submit" data-bind="attr: { formaction: getRedirectUrl('facebook') }" class="button btn-social-link btn-facebook" rel="noopener noreferrer nofollow" ><span><span>Continue com Facebook</span></span></button>
+        </li>
+        <li data-bind="visible: isEnabled('WindowsLive')">
+        	<button type="submit" data-bind="attr: { formaction: getRedirectUrl('WindowsLive') }" class="button btn-social-link btn-windowslive" rel="noopener noreferrer nofollow" ><span><span>Continue com Microsoft Live</span></span></button>
+        </li>
+    </ul>
+</form>
+<div class="label-or" data-bind="attr: {'data-label': $t('or')}">
+</div>
+<!-- /ko -->

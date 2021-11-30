@@ -1,0 +1,16 @@
+label,rótulo (label)
+Field,Campo
+"Sort Order","Ordem de exibição"
+Add,Adcionar
+O2TI,O2TI
+"Sort Address at Checkout","Ordenar Campos de Formulário no Checkout"
+"Implements display order of fields in checkout form","Implemente uma ordem de exibição dos campos no checkout"
+"Note that the ""Create Account"" form type is only available if there is a previous implementation. Meet the O2TI_CheckoutIdentificationStep","Observe que o tipo de formulário "" Criar conta "" só está disponível se houver uma implementação anterior. Conheça o O2TI_CheckoutIdentificationStep"
+Enabled,Habilitado
+"Address Sort Order","Order de campos do endereço"
+"Delivery address and payment form","Formulário de endereço de envio e pagamento"
+"Field Address","Campos de Endereço"
+"To be listed here, the field must be set to visible","Para ser listado aqui, o campo deve ser definido como visível"
+"Customer Sort Order","Formulário de Criar conta"
+"Account creation form","Formulário de criação da conta"
+"Field Customer and Address (if available)","Campos de Clientes e Endereço (se aplicável)"

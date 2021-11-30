@@ -1,0 +1,9 @@
+{
+    "extends": [
+    	"./.eslintrc-reset",
+    	"./.eslintrc-magento",
+    	"./.eslintrc-jquery",
+    	"./.eslintrc-misc",
+    	"./.eslintrc-jscs"
+    ]
+}

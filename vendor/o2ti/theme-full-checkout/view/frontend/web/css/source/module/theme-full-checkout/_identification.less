@@ -1,0 +1,157 @@
+/**
+ * Copyright © 2021 O2TI. All rights reserved.
+ * @author  Bruno Elisei <brunoelisei@o2ti.com>
+ * See LICENSE.txt for license details.
+ */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .full-checkout {
+        .form-logout,
+        .form-account-create {
+            .actions-toolbar {
+                .action {
+                    &.primary {
+                        &:extend(.abs-button-l all);
+                        &:extend(.abs-button-responsive all);
+
+                        margin: @theme-full-checkout-step-identification-mobile-action__margin;
+                    }
+                }
+            }
+        }
+
+        a.action {
+            cursor: pointer;
+        }
+
+        .persistent {
+            .control {
+                &._with-tooltip {
+                    display: inline-flex;
+
+                    .input-checkbox {
+                        width: auto;
+                    }
+                }
+            }
+        }
+
+        .actions-identification {
+            .actions-toolbar {
+                .action {
+                    &.primary {
+                        &:extend(.abs-button-l all);
+
+                        margin: @theme-full-checkout-step-identification-mobile-action__margin;
+
+                        &.continue-as-guest {
+                            .lib-button-revert-secondary-color();
+                        }
+                    }
+                }
+            }
+        }
+
+        .fieldset {
+            &.identification {
+                margin-bottom: 0;
+                padding: 0;
+            }
+        }
+
+        .opc-wrapper {
+            .is-customer,
+            .is-new-customer {
+                background-color: @theme-full-checkout-step-content-mobile__background;
+
+                .fieldset {
+                    .lib-css(padding, @theme-full-checkout-step-identification-content-mobile__padding);
+                    .lib-css(background, @theme-full-checkout-step-content-mobile__background);
+                    .lib-css(border-bottom, @theme-full-checkout-step-title__border);
+                    .lib-css(border-top, @theme-full-checkout-step-title__border);
+                    .lib-css(margin, @theme-full-checkout-step-content-mobile__margin);
+
+                    .legend {
+                        &:extend(.abs-theme-full-checkout-sub-title-sessions-border-bottom);
+                    }
+                }
+            }
+        }
+
+        .opc-wrapper {
+            .is-customer {
+                .fieldset {
+                    .lib-css(margin, @theme-full-checkout-step-content-mobile-two-fieldset__margin);
+                }
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .full-checkout {
+        .form-logout {
+            .actions-toolbar {
+                > .primary {
+                    float: right;
+                }
+
+                .action {
+                    &.primary {
+                        margin: @theme-full-checkout-step-identification-desktop-action__margin;
+                    }
+                }
+            }
+        }
+
+        .form-account-create {
+            .actions-toolbar {
+                .action {
+                    &.primary {
+                        .lib-button-reset();
+                        .lib-button-primary();
+
+                        width: auto;
+                    }
+                }
+            }
+        }
+
+        .actions-identification {
+            .actions-toolbar {
+                > .primary {
+                    float: right;
+                }
+            }
+        }
+
+        .opc-wrapper {
+            .is-customer,
+            .is-new-customer {
+                .lib-css(background, @theme-full-checkout-step-content-mobile-dark__background);
+                .lib-css(max-width, @theme-full-checkout-step-identification__max-width);
+
+                .fieldset {
+                    .lib-css(border-bottom, unset);
+                    .lib-css(border-top, unset);
+                    .lib-css(margin, 0 @indent__xs);
+                    .lib-css(background, unset);
+                }
+            }
+        }
+
+        .opc-wrapper {
+            .is-customer {
+                .lib-css(margin, @indent__xs);
+            }
+        }
+    }
+}

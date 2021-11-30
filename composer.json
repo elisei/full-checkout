@@ -1,14 +1,28 @@
 {
     "name": "o2ti/full-checkout",
-    "description": "Full Checkout by O2TI",
-    "type": "magento2-module",
+    "description": "Full Checkout",
     "license": [
         "OSL-3.0",
         "AFL-3.0"
     ],
+    "authors": [
+        {
+            "name": "Bruno Elisei",
+            "email": "brunoelisei@o2ti.com"
+        }
+    ],
     "require": {
-        "php": ">=7.0",
-        "magento/product-community-edition": ">=2.3.0"
+        "php": ">=7.3",
+        "o2ti/advanced-fields-checkout": "100.1.*",
+        "o2ti/advanced-street-address": "100.1.*",
+        "o2ti/auto-complete-address-br": "100.1.*",
+        "o2ti/checkout-identification-step": "100.1.*",
+        "o2ti/field-sort-in-checkout": "100.1.*",
+        "o2ti/input-masking": "100.1.*",
+        "o2ti/social-login": "100.1.*",
+        "o2ti/tax-document-validation-br": "100.1.*",
+        "o2ti/theme-full-checkout": "100.1.*",
+        "ext-json": "*"
     },
     "autoload": {
         "files": [
@@ -17,5 +31,20 @@
         "psr-4": {
             "O2TI\\FullCheckout\\": ""
         }
-    }
+    },
+    "require-dev": {
+        "magento/magento-coding-standard": "*"
+    },
+    "scripts": {
+        "post-install-cmd": "vendor/bin/phpcs --config-set installed_paths ../../..,../../phpcompatibility/php-compatibility/PHPCompatibility",
+        "post-update-cmd": "vendor/bin/phpcs --config-set installed_paths ../../..,../../phpcompatibility/php-compatibility/PHPCompatibility"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
+    ],
+    "prefer-stable": true,
+    "minimum-stability": "dev"
 }

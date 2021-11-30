@@ -1,0 +1,91 @@
+<!--
+/**
+ * Copyright © 2021 O2TI. All rights reserved.
+ * @author  Bruno Elisei <brunoelisei@o2ti.com>
+ * See LICENSE.txt for license details.
+ */
+-->
+<div class="field theme-full-checkout-fields-floating-label" data-bind="visible: visible, attr: {'name': element.dataScope}, css: additionalClasses">
+    <div class="control" data-bind="css: {'_with-tooltip': element.tooltip, '_with-button': element.inputName === 'password' }">
+        <div class="control-row">
+            <div class="_additional-element-input">
+                <!-- ko ifnot: element.hasAddons() -->
+                    <!-- ko template: element.elementTmpl --><!-- /ko -->
+                <!-- /ko -->
+                <label class="label" data-bind="attr: { for: element.uid }">
+                    <!-- ko if: element.label -->
+                        <span translate="element.label"></span>
+                    <!-- /ko -->
+                </label>
+                <!-- ko if: element.hasAddons() -->
+                    <div class="control-addon">
+                        <!-- ko template: element.elementTmpl --><!-- /ko -->
+
+                        <!-- ko if: element.addbefore -->
+                            <label class="addon-prefix" data-bind="attr: { for: element.uid }"><span data-bind="text: element.addbefore"></span></label>
+                        <!-- /ko -->
+
+                        <!-- ko if: element.addafter -->
+                            <label class="addon-suffix" data-bind="attr: { for: element.uid }"><span data-bind="text: element.addafter"></span></label>
+                        <!-- /ko -->
+                    </div>
+                <!-- /ko -->
+            </div>
+            <!-- ko if: element.inputName === 'password' || element.tooltip -->
+                <div class="_additional-element-addtional">
+                    <!-- ko if: element.inputName === 'password' -->
+                        
+                            <button type="button" name="show-password" id="create-password-show-password" data-bind="attr: {
+                                class: 'icon-view-password',
+                                role: 'show-password',
+                                title: $t('Show Password')
+                            },
+                            click: isViewCreatePassword">
+                                <span><!-- ko i18n: 'Show Password'--><!-- /ko --></span>
+                            </button>
+                    <!-- /ko -->
+                    <!-- ko if: element.tooltip -->
+                        <!-- ko template: element.tooltipTpl --><!-- /ko -->
+                    <!-- /ko -->
+                </div>
+            <!-- /ko -->
+        </div>
+        <div class="control-row">
+            <div class="_additional-information">
+                <!-- ko if: element.inputName === 'password' -->
+                    
+                    <div data-role="password-strength-meter" aria-live="polite" data-bind="attr: {
+                        id: uAdditionalid,
+                        class: _strengthClass()
+                    }">
+                        <div class="password-strength-meter-label">
+                            <span data-bind="i18n: 'Password Strength: '"></span>
+                            <span data-bind="text: _strengthLabel()"></span>
+                        </div>
+                        <div id="password-strength-meter" class="password-strength-meter">
+                            <span id="password-strength-meter-label" data-role="password-strength-meter-label"></span>
+                        </div>
+                    </div>
+                <!-- /ko -->
+                <!-- ko if: element.notice -->
+                    <div class="field-note" data-bind="attr: { id: element.noticeId }">
+                        <span data-bind="text: element.notice"></span>
+                    </div>
+                <!-- /ko -->
+
+                <!-- ko if: element.error() -->
+                    <div class="field-error" data-bind="attr: { id: element.errorId }" generated="true">
+                        <span data-bind="text: element.error"></span>
+                    </div>
+                <!-- /ko -->
+
+                <!-- ko if: element.warn() -->
+                    <div role="alert" class="message warning" data-bind="attr: { id: element.warningId }" generated="true">
+                        <span data-bind="text: element.warn"></span>
+                    </div>
+                <!-- /ko -->
+            </div>
+        </div>
+
+    </div>
+</div>

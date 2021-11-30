@@ -1,0 +1,20 @@
+{
+    "name": "o2ti/social-login",
+    "description": "Social Login by O2TI",
+    "type": "magento2-module",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "require": {
+        "hybridauth/hybridauth" : "^3.2"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "O2TI\\SocialLogin\\": ""
+        }
+    }    
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © O2TI. All rights reserved.
+ * @author    Bruno Elisei <brunoelisei@o2ti.com>
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <checkout_identification_step>
+            <general>
+                <enabled>1</enabled>
+                <ux>
+                    <guest>
+                        <contiune_as_guest>1</contiune_as_guest>
+                    </guest>
+                    <customer>
+                        <logout>1</logout>
+                        <sync_order_as_guest>1</sync_order_as_guest>
+                    </customer>
+                    <new_customer>
+                        <create_account>1</create_account>
+                        <create_account_address>0</create_account_address>
+                    </new_customer>
+                </ux>
+            </general>
+        </checkout_identification_step>
+        <recaptcha_frontend>
+            <type_for>
+                <checkout_create_account/>
+            </type_for>
+        </recaptcha_frontend>
+    </default>
+</config>

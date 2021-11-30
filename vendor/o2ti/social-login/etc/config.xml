@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2019 O2TI. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<config>
+    <default>
+        <social_login>
+            <facebook>
+                <sort_order>1</sort_order>
+            </facebook>
+            <google>
+                <sort_order>2</sort_order>
+            </google>
+            <windowslive>
+                <sort_order>3</sort_order>
+            </windowslive>
+        </social_login>
+    </default>
+</config>

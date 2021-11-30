@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © O2TI. All rights reserved.
+ * @author    Bruno Elisei <brunoelisei@o2ti.com>
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="o2ti" translate="label comment" sortOrder="100">
+            <label>O2TI</label>
+        </tab>
+        <section id="advanced_fields_checkout" translate="label comment" sortOrder="1600" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Advanced Fields at Checkout</label>
+            <tab>o2ti</tab>
+            <resource>O2TI_AdvancedFieldsCheckout::config</resource>
+            <group id="general" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Advanced Fields at Checkout</label>
+                <comment>Add advanced properties to checkout fields</comment>
+                <field id="enabled" translate="label comment" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <group id="columns" translate="label comment" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Set the usage percentage for a column of fields.</label>
+                    <comment>Choose the proportion the field will have on your line.</comment>
+                    <depends>
+                        <field id="*/*/enabled">1</field>
+                    </depends>
+                    <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Enabled</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="classes" translate="label comment" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Fields</label>
+                        <comment>To be listed here, the field must be set to visible</comment>
+                        <frontend_model>O2TI\AdvancedFieldsCheckout\Block\Adminhtml\Form\Field\AddClasses</frontend_model>
+                        <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    </field>
+                </group>
+                <group id="autocomplete" translate="label comment" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sets the field to autocomplete</label>
+                    <comment>Sets the value for the field's autocomplete</comment>
+                    <depends>
+                        <field id="*/*/enabled">1</field>
+                    </depends>
+                    <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Enabled</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="autocomplete" translate="label comment" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Fields</label>
+                        <comment>To be listed here, the field must be set to visible. View list in https://www.w3.org/WAI/GL/wiki/WCAG_2.1_Implementations/JF/research</comment>
+                        <frontend_model>O2TI\AdvancedFieldsCheckout\Block\Adminhtml\Form\Field\AddAutocomplete</frontend_model>
+                        <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    </field>
+                </group>
+                <group id="placeholder" translate="label comment" type="text" sortOrder="400" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Define placeholder in fields</label>
+                    <comment>Set the placeholder of the fields</comment>
+                    <depends>
+                        <field id="*/*/enabled">1</field>
+                    </depends>
+                    <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Enabled</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="placeholder" translate="label comment" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Fields</label>
+                        <comment>To be listed here, the field must be set to visible</comment>
+                        <frontend_model>O2TI\AdvancedFieldsCheckout\Block\Adminhtml\Form\Field\AddPlaceholder</frontend_model>
+                        <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    </field>
+                </group>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,35 @@
+<!--
+/**
+ * Copyright © 2021 O2TI. All rights reserved.
+ * @author  Bruno Elisei <brunoelisei@o2ti.com>
+ * See LICENSE.txt for license details.
+ */
+-->
+<div class="checkout-content">
+	<div class="checkout-header">
+		<!-- ko foreach: getRegion('logoBar') -->
+			<!-- ko template: getTemplate() --><!-- /ko -->
+		<!--/ko-->
+		<!-- ko foreach: getRegion('progressBar') -->
+			<!-- ko template: getTemplate() --><!-- /ko -->
+		<!--/ko-->
+		<!-- ko foreach: getRegion('estimation') -->
+		    <!-- ko template: getTemplate() --><!-- /ko -->
+		<!--/ko-->
+		<!-- ko foreach: getRegion('messages') -->
+		    <!-- ko template: getTemplate() --><!-- /ko -->
+		<!--/ko-->
+	</div>
+	<div class="opc-wrapper">
+	    <ol class="opc" id="checkoutSteps">
+	    <!-- ko foreach: getRegion('steps') -->
+	        <!-- ko template: getTemplate() --><!-- /ko -->
+	    <!--/ko-->
+	    </ol>
+	</div>
+</div>
+<div class="opc-right">
+	<!-- ko foreach: getRegion('sidebar') -->
+	    <!-- ko template: getTemplate() --><!-- /ko -->
+	<!--/ko-->
+</div>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * Copyright © 2021 O2TI. All rights reserved.
+ * @author  Bruno Elisei <brunoelisei@o2ti.com>
+ * See LICENSE.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Checkout\Model\CompositeConfigProvider">
+        <arguments>
+            <argument name="configProviders" xsi:type="array">
+                <item name="theme_full_checkout_config_provider" xsi:type="object">O2TI\ThemeFullCheckout\ConfigProvider\CheckoutConfigProvider</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
+        <plugin name="modify_checkout_layout" type="O2TI\ThemeFullCheckout\Plugin\ThemeFullCheckoutLayoutPlugin"  disabled="false" sortOrder="89" />
+    </type>
+    <type name="Magento\Checkout\Controller\Onepage\Success">
+        <plugin name="modify_checkout_success" type="O2TI\ThemeFullCheckout\Plugin\Success"  disabled="false" sortOrder="100"/>
+    </type>
+</config>

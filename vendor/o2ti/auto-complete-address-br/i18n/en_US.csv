@@ -1,0 +1,25 @@
+"E-Correios (Não oficial)","E-Correios (Não oficial)"
+"Republica Virtual","Republica Virtual"
+"Via Cep","Via Cep"
+"Please select","Please select"
+"1st line of the street","1st line of the street"
+"2st line of the street","2st line of the street"
+"3st line of the street","3st line of the street"
+"4st line of the street","4st line of the street"
+O2TI,O2TI
+"Autocomplete Address for Brazil","Autocomplete Address for Brazil"
+Enabled,Enabled
+"Number of Lines in a Street Address","Number of Lines in a Street Address"
+"Valid range: 1-4","Valid range: 1-4"
+"API return relationship","API return relationship"
+"Relate the return provided by the API to the magento fields","Relate the return provided by the API to the magento fields"
+"The Street attribute is","The Street attribute is"
+"The address district is","The address district is"
+"User Experience","User Experience"
+"Define the user experience for the fields affected by the module","Define the user experience for the fields affected by the module"
+"Compatibility with O2TI_InputMasking module","Compatibility with O2TI_InputMasking module"
+"Hide API Target Fields","Hide API Target Fields"
+"Defines whether to hide the elements that will be filled after the Api returns","Defines whether to hide the elements that will be filled after the Api returns"
+Developer,Developer
+"Choose the API for the data source","Choose the API for the data source"
+Api,Api

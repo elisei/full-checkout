@@ -1,0 +1,14 @@
+<!--
+/**
+ * Copyright © O2TI. All rights reserved.
+ * @author    Bruno Elisei <brunoelisei@o2ti.com>
+ * See COPYING.txt for license details.
+ */
+-->
+<li id="identification" data-bind="visible: isVisible">
+    <div class="step-title" data-bind="i18n: 'Identification'" data-role="title"></div>
+    <div id="checkout-step-title" class="step-content" data-role="content">
+        <each args="getRegion('login-methods')" render=""></each>
+    </div>
+</li>
+

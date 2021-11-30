@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © O2TI. All rights reserved.
+ * @author    Bruno Elisei <brunoelisei@o2ti.com>
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="o2ti" translate="label comment" sortOrder="100">
+            <label>O2TI</label>
+        </tab>
+        <section id="tax_document_validation_br" translate="label comment" sortOrder="1300" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Tax Document Validation for Brazilian</label>
+            <tab>o2ti</tab>
+            <resource>O2TI_TaxDocumentValidationBr::config</resource>
+            <group id="general" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Tax Document Validation for Brazilian</label>
+                <comment>Implementation of validation for the fiscal document, in the Brazilian standard</comment>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <group id="vat_id" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Field Vat Id</label>
+                    <comment>Rule implementation for the vat_id input. Vat Id is an address attribute</comment>
+                    <depends>
+                        <field id="*/*/enabled">1</field>
+                    </depends>
+                    <field id="vat_frontend_visibility" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Collect the VatId</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <config_path>customer/create_account/vat_frontend_visibility</config_path>
+                    </field>
+                    <field id="enabled_cpf" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Check if it is a valid CPF</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="enabled_cnpj" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Check if it is a valid CNPJ</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                </group>
+                <group id="taxvat" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Field Taxvat</label>
+                    <comment>Implementation of the taxvat input. Taxvat is an attribute of the customer, present on the registration form</comment>
+                    <depends>
+                        <field id="*/*/enabled">1</field>
+                    </depends>
+                    <field id="taxvat_show" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Collect the Taxvat</label>
+                        <source_model>Magento\Config\Model\Config\Source\Nooptreq</source_model>
+                        <backend_model>Magento\Customer\Model\Config\Backend\Show\Customer</backend_model>
+                        <config_path>customer/address/taxvat_show</config_path>
+                    </field>
+                    <field id="enabled_cpf" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Check if it is a valid CPF</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="enabled_cnpj" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Check if it is a valid CNPJ</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                </group>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,31 @@
+<?php
+/**
+ * Copyright © 2021 O2TI. All rights reserved.
+ * @author  Bruno Elisei <brunoelisei@o2ti.com>
+ * See LICENSE.txt for license details.
+ */
+
+// phpcs:disable Magento2.Templates.ThisInTemplate
+?>
+<div class="block block-order-details-view">
+    <div class="block-title">
+        <strong><?=  $block->escapeHtmlAttr(__('Details of your order')) ?></strong>
+    </div>
+    <div class="block-content">
+        <dt class="title"><?=  $block->escapeHtmlAttr(__('Status')) ?></dt>
+        <dd class="content">
+            <table class="data">
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="middle"><?= $block->getChildHtml('order.status.current'); ?></th>
+                            <?php if ($block->getOrder()->getState() == 'canceled'): ?>
+                                <td  class="middle">
+                                    <?= $block->getChildHtml('buttons'); ?>
+                                </td>
+                            <?php endif; ?>
+                        </tr>
+                    </tbody>
+            </table>
+    </div>
+</div>
+<?= $block->getChildHtml('order.status.comments'); ?>

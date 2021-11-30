@@ -1,0 +1,71 @@
+/**
+ * Copyright © 2021 O2TI. All rights reserved.
+ * @author  Bruno Elisei <brunoelisei@o2ti.com>
+ * See LICENSE.txt for license details.
+ */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+    //
+    //  Shipping Information
+    //  ---------------------------------------------
+    .full-checkout {
+        .opc-block-shipping-information {
+            .lib-css(padding, 0 @theme-full-sidebar-shipping-information__padding);
+
+            .shipping-information-title {
+                &:extend(.abs-checkout-title all);
+                .lib-css(border-bottom, @checkout-step-title__border);
+
+                margin: 0 0 @indent__base;
+                position: relative;
+
+                .action-edit {
+                    &:extend(.abs-action-button-as-link all);
+                    .lib-css(top, @theme-full-sidebar-shipping-information-edit-icon__top);
+                    .lib-icon-font(
+                        @theme-full-sidebar-shipping-information-edit-icon__content,
+                        @_icon-font-size: @theme-full-sidebar-shipping-information-edit-icon__font-size,
+                        @_icon-font-line-height: @theme-full-sidebar-shipping-information-edit-icon__line-height,
+                        @_icon-font-text-hide: true,
+                        @_icon-font-color: @theme-full-sidebar-shipping-information-edit-icon__color,
+                        @_icon-font-color-hover: @theme-full-sidebar-shipping-information-edit-icon__hover__color,
+                        @_icon-font-color-active: @theme-full-sidebar-shipping-information-edit-icon__color
+                    );
+                    .lib-icon-image(@_icon-image: @theme-full-sidebar-shipping-information-edit-icon-image__content);
+
+                    margin: 0;
+                    position: absolute;
+                    right: 0;
+                }
+            }
+
+            .shipping-information-content {
+                .lib-css(line-height, @theme-full-sidebar-shipping-information__line-height);
+
+                .actions-toolbar {
+                    margin-left: 0;
+                }
+            }
+
+            .ship-to,
+            .ship-via {
+                margin: 0 0 @indent__base;
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    .full-checkout {
+        .opc-block-shipping-information {
+            .shipping-information-title {
+                font-size: 2.3rem;
+            }
+        }
+    }
+}

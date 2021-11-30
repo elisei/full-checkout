@@ -1,0 +1,29 @@
+<!--
+/**
+ * Copyright © O2TI. All rights reserved.
+ * @author    Bruno Elisei <brunoelisei@o2ti.com>
+ * See COPYING.txt for license details.
+ */
+-->
+<div class="logged">
+    <h3 class="text-hi">
+        <span data-bind="i18n: 'Hi, '"></span>
+        <span data-bind="text: getCustomerFirstName()"></span>
+    </h3>
+    <p class="text-info-email">
+        <span data-bind="i18n: 'You are logged in with the email:'"></span>
+        <strong data-bind="text: getCustomerEmail()"></strong>
+    </p>
+    <!-- ko if: isLogoutVisible() -->
+        <a class="action logout" data-bind="click: logout">
+            <span data-bind="i18n: 'Do you want to log out?'">
+        </a>
+    <!-- /ko -->
+</div>
+
+<form class="form form-logout" data-role="logout"
+      data-bind="submit:logout"
+      method="post">
+    <fieldset id="identification-logout-fieldset" class="fieldset identification" data-bind="blockLoader: isLoading">
+    </fieldset>
+</form>

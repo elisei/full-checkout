@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © O2TI. All rights reserved.
+ * @author    Bruno Elisei <brunoelisei@o2ti.com>
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/system_file.xsd">
+    <system>
+        <tab id="o2ti" translate="label comment" sortOrder="100">
+            <label>O2TI</label>
+        </tab>
+        <section id="input_masking" translate="label comment" type="text" sortOrder="1500" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Input Masking</label>
+            <tab>o2ti</tab>
+            <resource>O2TI_InputMasking::input_masking</resource>
+            <group id="general" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Input Masking</label>
+                <comment>Implement input masks for form fields</comment>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <group id="address" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Input in Address Form</label>
+                    <comment>Address registration form. Present at checkout and address editing on my account</comment>
+                    <depends>
+                        <field id="*/*/enabled">1</field>
+                    </depends>
+                    <group id="telephone" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Telephone</label>
+                        <field id="enable_mask" translate="label comment" type="select" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Apply Mask</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        </field>
+                        <field id="mask" translate="label comment" type="text" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Input Masking</label>
+                        </field>
+                        <field id="clean_if_not_match" translate="label comment" type="select" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Clean if not match</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        </field>
+                    </group>
+                    <group id="vat_id" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Field VatId</label>
+                        <field id="enable_mask" translate="label comment" type="select" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Apply Mask</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        </field>
+                        <field id="mask" translate="label comment" type="text" sortOrder="301" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Input Masking</label>
+                        </field>
+                        <field id="clean_if_not_match" translate="label comment" type="select" sortOrder="302" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Clean if not match</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        </field>
+                    </group>
+                    <group id="postcode" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Postcode</label>
+                        <field id="enable_mask" translate="label comment" type="select" sortOrder="400" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Apply Mask</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        </field>
+                        <field id="mask" translate="label comment" type="text" sortOrder="401" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Input Masking</label>
+                        </field>
+                        <field id="clean_if_not_match" translate="label comment" type="select" sortOrder="402" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Clean if not match</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        </field>
+                    </group>
+                </group>
+                <group id="customer" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Input in Account Create Form</label>
+                    <comment>Account creation form</comment>
+                    <depends>
+                        <field id="*/*/enabled">1</field>
+                    </depends>
+                    <group id="taxvat" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Field Taxvat</label>
+                        <field id="enable_mask" translate="label comment" type="select" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Apply Mask</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        </field>
+                        <field id="mask" translate="label comment" type="text" sortOrder="301" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Input Masking</label>
+                        </field>
+                        <field id="clean_if_not_match" translate="label comment" type="select" sortOrder="302" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Clean if not match</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        </field>
+                    </group>
+                </group>
+            </group>
+        </section>
+    </system>
+</config>

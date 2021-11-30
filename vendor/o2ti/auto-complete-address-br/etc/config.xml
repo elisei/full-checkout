@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © O2TI. All rights reserved.
+ * @author    Bruno Elisei <brunoelisei@o2ti.com>
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <auto_complete_address_br>
+            <general>
+                <enabled>1</enabled>
+                <relationship>
+                    <street>0</street>
+                    <district>3</district>
+                </relationship>
+                <ux>
+                    <compatibility_o2ti_inputmasking>1</compatibility_o2ti_inputmasking>
+                    <hide_target_fields>1</hide_target_fields>
+                </ux>
+                <developer>
+                    <api>republicavirtual</api>
+                </developer>
+            </general>
+        </auto_complete_address_br>
+    </default>
+</config>

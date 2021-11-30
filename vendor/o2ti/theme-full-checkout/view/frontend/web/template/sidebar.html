@@ -1,0 +1,42 @@
+<!--
+/**
+ * Copyright © 2021 O2TI. All rights reserved.
+ * @author  Bruno Elisei <brunoelisei@o2ti.com>
+ * See LICENSE.txt for license details.
+ */
+-->
+<div id="opc-sidebar"
+     data-bind="afterRender:setModalElement, mageInit: {
+    'Magento_Ui/js/modal/modal':{
+        'type': 'custom',
+        'modalClass': 'opc-sidebar opc-summary-wrapper',
+        'wrapperClass': 'opc-right',
+        'parentModalClass': '_has-modal-custom',
+        'responsive': true,
+        'responsiveClass': 'custom-slide',
+        'overlayClass': 'modal-custom-overlay',
+        'buttons': []
+    }}">
+
+    <!-- ko foreach: getRegion('summary') -->
+        <!-- ko template: getTemplate() --><!-- /ko -->
+    <!--/ko-->
+    <!-- ko if: isVisibleOrderDetails() -->
+        <div class="opc-block-previous-steps-information">
+            <div class="previous-steps-information-block" data-bind="mageInit: {'collapsible':{'openedState': 'active'}}">
+                <div class="title" data-role="title">
+                    <strong role="heading" aria-level="1">
+                        <!-- ko i18n: 'Order Data'--><!-- /ko -->
+                    </strong>
+                </div>
+                <div class="content previous-steps-information-block-items" data-role="content">
+                    <div class="opc-block-shipping-information">
+                        <!-- ko foreach: getRegion('shipping-information') -->
+                        <!-- ko template: getTemplate() --><!-- /ko -->
+                        <!--/ko-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--/ko-->
+</div>

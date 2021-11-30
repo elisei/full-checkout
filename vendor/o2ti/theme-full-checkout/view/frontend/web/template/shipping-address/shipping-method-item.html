@@ -1,0 +1,46 @@
+<!--
+/**
+ * Copyright © 2021 O2TI. All rights reserved.
+ * @author  Bruno Elisei <brunoelisei@o2ti.com>
+ * See LICENSE.txt for license details.
+ */
+-->
+<div attr="'class': 'shipping-information-method-options label_carrier_' + method.method_code + '_' + method.carrier_code"
+    click="element.selectShippingMethod">
+    <div class="shipping-information-method-option">
+        <div class="shipping-information-method-input">
+            <input type="radio"
+                   class="radio"
+                   ifnot="method.error_message"
+                   ko-checked="element.isSelected"
+                   ko-value="method.carrier_code + '_' + method.method_code"
+                   attr="'aria-labelledby': 'label_method_' + method.method_code + '_' + method.carrier_code + ' ' + 'label_carrier_' + method.method_code + '_' + method.carrier_code,
+                        'checked': element.rates().length == 1 || element.isSelected" />
+        </div>
+        <div class="shipping-information-method-title">
+            <div class="shipping-method-title"
+                attr="'id': 'label_method_' + method.method_code + '_' + method.carrier_code"
+                text="method.method_title">
+            </div>
+            <div class="shipping-carrier-title" 
+                attr="'id': 'label_carrier_' + method.method_code + '_' + method.carrier_code" 
+                text="method.carrier_title">
+            </div>
+        </div>
+        <div class="shipping-information-method-price">
+            <each args="element.getRegion('price')" render=""></each>
+        </div>
+    </div>
+</div>
+<div class="row row-error"
+    if="method.error_message">
+    <div class="col col-error" colspan="4">
+        <div role="alert" class="message error">
+            <div text="method.error_message"></div>
+        </div>
+        <span class="no-display">
+            <input type="radio"
+                   attr="'value' : method.method_code, 'id': 's_method_' + method.method_code" />
+        </span>
+    </div>
+</div>

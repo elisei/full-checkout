@@ -1,0 +1,24 @@
+Field,Field
+Autocomplete,Autocomplete
+Add,Add
+Size,Size
+"Break the line","Break the line"
+Placeholder,Placeholder
+label,label
+Enable,Enable
+Disable,Disable
+"Password Strength: ","Password Strength: "
+"Show Password","Show Password"
+O2TI,O2TI
+"Advanced Fields at Checkout","Advanced Fields at Checkout"
+"Add advanced properties to checkout fields","Add advanced properties to checkout fields"
+Enabled,Enabled
+"Set the usage percentage for a column of fields.","Set the usage percentage for a column of fields."
+"Choose the proportion the field will have on your line.","Choose the proportion the field will have on your line."
+Fields,Fields
+"To be listed here, the field must be set to visible","To be listed here, the field must be set to visible"
+"Sets the field to autocomplete","Sets the field to autocomplete"
+"Sets the value for the field's autocomplete","Sets the value for the field's autocomplete"
+"To be listed here, the field must be set to visible. View list in https://www.w3.org/WAI/GL/wiki/WCAG_2.1_Implementations/JF/research","To be listed here, the field must be set to visible. View list in https://www.w3.org/WAI/GL/wiki/WCAG_2.1_Implementations/JF/research"
+"Define placeholder in fields","Define placeholder in fields"
+"Set the placeholder of the fields","Set the placeholder of the fields"
