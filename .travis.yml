@@ -2,7 +2,6 @@ language: php
 
 php:
   - '7.3'
-  - '7.4'
 
 install: [
   "echo \"{\\\"http-basic\\\":{\\\"repo.magento.com\\\":{\\\"username\\\":\\\"${MAGENTO_USERNAME}\\\",\\\"password\\\":\\\"${MAGENTO_PASSWORD}\\\"}}}\" > auth.json",
