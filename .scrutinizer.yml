@@ -1,0 +1,24 @@
+checks:
+    php:
+        code_rating: true
+        duplication: true
+        excluded_dependencies:
+            - magento/*
+
+filter: 
+    excluded_paths:
+         - vendor
+
+build:
+    environment:
+            php:
+                version: 7.3
+    dependencies:
+        before:
+            - 'echo "{\"http-basic\":{\"repo.magento.com\":{\"username\":\"${MAGENTO_USERNAME}\",\"password\":\"${MAGENTO_USERNAME}\"}}}" > auth.json'
+            - /home/scrutinizer/.phpenv/shims/php /usr/bin/composer.phar self-update --1
+    nodes:
+        analysis:
+            tests:
+                override:
+                    - php-scrutinizer-run
