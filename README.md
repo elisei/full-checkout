@@ -2,7 +2,7 @@
 
 Um Checkout Completo, com tudo que você precisa para atingir altas taxas de conversão em seu Magento 2.
 
-# Badges
+## Badges
 
 Status Atual
 
@@ -22,6 +22,13 @@ Versão
 ## Recursos
 
 Esse módulo é uma união de diversos recursos desenvolvidos e pensados para otimizar a experiência de seu cliente na finalização do pedido.
+
+
+[![Play](https://user-images.githubusercontent.com/1786389/144893098-0888dc0c-da46-44c8-9a39-00530ecfb56f.png)](https://youtu.be/Blk8yt2DpDs "Full Checkout - V2")
+
+
+![embed]()
+
 
 ### Checkout Identification Step
 
