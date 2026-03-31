@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.374.2",
+            "version": "3.375.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "67b6b6210af47319c74c5666388d71bc1bc58276"
+                "reference": "6cfa1798c3fa0182d902eda9419dca48c86d74a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/67b6b6210af47319c74c5666388d71bc1bc58276",
-                "reference": "67b6b6210af47319c74c5666388d71bc1bc58276",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/6cfa1798c3fa0182d902eda9419dca48c86d74a1",
+                "reference": "6cfa1798c3fa0182d902eda9419dca48c86d74a1",
                 "shasum": ""
             },
             "require": {
@@ -153,9 +153,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.374.2"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.375.0"
             },
-            "time": "2026-03-27T18:05:55+00:00"
+            "time": "2026-03-30T19:30:55+00:00"
         },
         {
             "name": "brick/math",
@@ -6277,16 +6277,16 @@
         },
         {
             "name": "o2ti/checkout-identification-step",
-            "version": "100.1.9",
+            "version": "101.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/elisei/checkout-identification-step.git",
-                "reference": "aac9d9739d19d4093c85d9338fbf752b2a94184a"
+                "reference": "82f71bb8b19e4b4590a4e27ebcc1bdd023f9d27d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elisei/checkout-identification-step/zipball/aac9d9739d19d4093c85d9338fbf752b2a94184a",
-                "reference": "aac9d9739d19d4093c85d9338fbf752b2a94184a",
+                "url": "https://api.github.com/repos/elisei/checkout-identification-step/zipball/82f71bb8b19e4b4590a4e27ebcc1bdd023f9d27d",
+                "reference": "82f71bb8b19e4b4590a4e27ebcc1bdd023f9d27d",
                 "shasum": ""
             },
             "require": {
@@ -6329,9 +6329,9 @@
             "description": "Create additional step in unique for customer identification",
             "support": {
                 "issues": "https://github.com/elisei/checkout-identification-step/issues",
-                "source": "https://github.com/elisei/checkout-identification-step/tree/100.1.9"
+                "source": "https://github.com/elisei/checkout-identification-step/tree/101.0.1"
             },
-            "time": "2025-02-11T14:24:43+00:00"
+            "time": "2026-03-31T14:30:22+00:00"
         },
         {
             "name": "o2ti/field-sort-in-checkout",
@@ -6451,16 +6451,16 @@
         },
         {
             "name": "o2ti/social-login",
-            "version": "102.0.3",
+            "version": "102.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/elisei/social-login.git",
-                "reference": "e327d1fc71ff7b7157703ba709dce296e5146b10"
+                "reference": "1bb1f330cc41609704a6add8284cf698197e47e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elisei/social-login/zipball/e327d1fc71ff7b7157703ba709dce296e5146b10",
-                "reference": "e327d1fc71ff7b7157703ba709dce296e5146b10",
+                "url": "https://api.github.com/repos/elisei/social-login/zipball/1bb1f330cc41609704a6add8284cf698197e47e7",
+                "reference": "1bb1f330cc41609704a6add8284cf698197e47e7",
                 "shasum": ""
             },
             "require": {
@@ -6504,9 +6504,9 @@
             "description": "Social Login by O2TI",
             "support": {
                 "issues": "https://github.com/elisei/social-login/issues",
-                "source": "https://github.com/elisei/social-login/tree/102.0.3"
+                "source": "https://github.com/elisei/social-login/tree/102.0.4"
             },
-            "time": "2026-03-27T17:13:59+00:00"
+            "time": "2026-03-31T14:27:02+00:00"
         },
         {
             "name": "o2ti/tax-document-validation-br",
@@ -8014,25 +8014,25 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v7.4.6",
+            "version": "v8.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "3ebc794fa5315e59fd122561623c2e2e4280538e"
+                "reference": "7bf9162d7a0dff98d079b72948508fa48018a770"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/3ebc794fa5315e59fd122561623c2e2e4280538e",
-                "reference": "3ebc794fa5315e59fd122561623c2e2e4280538e",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/7bf9162d7a0dff98d079b72948508fa48018a770",
+                "reference": "7bf9162d7a0dff98d079b72948508fa48018a770",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.2",
+                "php": ">=8.4",
                 "symfony/polyfill-ctype": "~1.8",
                 "symfony/polyfill-mbstring": "~1.8"
             },
             "require-dev": {
-                "symfony/process": "^6.4|^7.0|^8.0"
+                "symfony/process": "^7.4|^8.0"
             },
             "type": "library",
             "autoload": {
@@ -8060,7 +8060,7 @@
             "description": "Provides basic utilities for the filesystem",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/filesystem/tree/v7.4.6"
+                "source": "https://github.com/symfony/filesystem/tree/v8.0.6"
             },
             "funding": [
                 {
@@ -8080,27 +8080,27 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-02-25T16:50:00+00:00"
+            "time": "2026-02-25T16:59:43+00:00"
         },
         {
             "name": "symfony/finder",
-            "version": "v7.4.6",
+            "version": "v8.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "8655bf1076b7a3a346cb11413ffdabff50c7ffcf"
+                "reference": "441404f09a54de6d1bd6ad219e088cdf4c91f97c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/8655bf1076b7a3a346cb11413ffdabff50c7ffcf",
-                "reference": "8655bf1076b7a3a346cb11413ffdabff50c7ffcf",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/441404f09a54de6d1bd6ad219e088cdf4c91f97c",
+                "reference": "441404f09a54de6d1bd6ad219e088cdf4c91f97c",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.2"
+                "php": ">=8.4"
             },
             "require-dev": {
-                "symfony/filesystem": "^6.4|^7.0|^8.0"
+                "symfony/filesystem": "^7.4|^8.0"
             },
             "type": "library",
             "autoload": {
@@ -8128,7 +8128,7 @@
             "description": "Finds files and directories via an intuitive fluent interface",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/finder/tree/v7.4.6"
+                "source": "https://github.com/symfony/finder/tree/v8.0.6"
             },
             "funding": [
                 {
@@ -8148,7 +8148,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-01-29T09:40:50+00:00"
+            "time": "2026-01-29T09:41:02+00:00"
         },
         {
             "name": "symfony/intl",
